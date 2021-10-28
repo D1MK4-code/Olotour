@@ -20,6 +20,7 @@ const StyledNavbar = styled.nav`
   a {
     font-weight: 500;
     font-size: 1.5rem;
+    line-height: 1.2em;
     color: #fe7062;
     text-decoration: none;
     font-style: italic;
@@ -72,13 +73,13 @@ const StyledNavbar = styled.nav`
       background-color: #f5f8ff;
       transform: translateX(100%);
       transition: transform 0.3s ease-in;
-      padding: 6.5rem 0 0;
+      padding: 8rem 0 0;
       li {
-        margin: 0 0 2rem 0;
+        margin: 0 0 2.5rem 0;
       }
       a {
         color: #070879;
-        font-size: 1.375rem;
+        font-size: 1.5rem;
       }
       &.active {
         transform: translateX(0);

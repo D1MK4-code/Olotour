@@ -89,12 +89,7 @@ const StyledHero = styled.div`
   }
   @media (max-width: 575px) {
     min-height: auto;
-    > div {
-      flex-direction: column;
-      &:first-child {
-        padding-top: 6rem;
-      }
-    }
+
     h1 {
       font-size: 2.25rem;
     }
