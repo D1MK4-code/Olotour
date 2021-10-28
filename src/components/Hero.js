@@ -88,12 +88,18 @@ const StyledHero = styled.div`
     }
   }
   @media (max-width: 575px) {
-    min-height: none;
+    min-height: auto;
     > div {
       flex-direction: column;
       &:first-child {
-        padding-top: 2rem;
+        padding-top: 6rem;
       }
+    }
+    h1 {
+      font-size: 2.25rem;
+    }
+    p {
+      font-size: 1rem;
     }
   }
 `
