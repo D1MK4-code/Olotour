@@ -30,6 +30,14 @@ const StyledContainer = styled.section`
       }
     }
   }
+  @media (max-width: 575px) {
+    overflow: hidden;
+    > .gatsby-image-wrapper {
+      &:first-child {
+        width: 100%;
+      }
+    }
+  }
 `
 
 export default function Home() {

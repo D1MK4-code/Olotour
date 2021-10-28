@@ -16,6 +16,7 @@ const StyledNavbar = styled.nav`
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   a {
     font-weight: 500;
@@ -61,6 +62,12 @@ const StyledNavbar = styled.nav`
 
   @media (max-width: 767px) {
     padding: 1.5rem 1rem 0;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    a {
+      pointer-events: all;
+    }
     ul {
       position: absolute;
       right: 0;
@@ -74,12 +81,15 @@ const StyledNavbar = styled.nav`
       transform: translateX(100%);
       transition: transform 0.3s ease-in;
       padding: 8rem 0 0;
+      pointer-events: all;
       li {
         margin: 0 0 2.5rem 0;
+        pointer-events: all;
       }
       a {
         color: #070879;
         font-size: 1.5rem;
+        pointer-events: all;
       }
       &.active {
         transform: translateX(0);
@@ -92,6 +102,7 @@ const StyledBurger = styled.div`
   display: none;
   position: relative;
   z-index: 10;
+  pointer-events: all;
   div {
     width: 2rem;
     height: 3px;

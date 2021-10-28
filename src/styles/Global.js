@@ -142,6 +142,10 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
   }
 
+  #gatsby-focus-wrapper {
+    width: 100vw;
+  }
+
 
 @media(max-width: 767px) {
   body {

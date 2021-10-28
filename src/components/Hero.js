@@ -107,6 +107,7 @@ const StyledLeft = styled.div`
   position: relative;
   z-index: 5;
   width: 40%;
+  margin: 0 auto 0 0 !important;
   @media (max-width: 767px) {
     width: 100%;
   }
@@ -115,24 +116,34 @@ const StyledLeft = styled.div`
 const StyledRight = styled.div`
   display: block;
   min-height: 515px;
-  position: relative;
+  position: absolute;
   align-items: flex-end;
   z-index: 1;
   width: 60%;
+  bottom: 0px;
+  right: 0px;
+  max-width: 1150px;
   div {
     width: 100%;
   }
   img {
     height: auto;
   }
+  @media (max-width: 1599px) {
+    width: 65%;
+  }
   @media (max-width: 1399px) {
     align-items: center;
+  }
+  @media (max-width: 991px) {
+    width: 60%;
   }
   @media (max-width: 767px) {
     width: 100%;
     align-items: flex-start;
     padding-top: 2rem;
     min-height: 450px;
+    position: static;
     img {
       max-width: 550px;
       margin: 0 auto;
