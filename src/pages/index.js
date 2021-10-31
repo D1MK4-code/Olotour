@@ -4,6 +4,7 @@ import Hero from "../components/Hero"
 import People from "../components/People"
 import Amenities from "../components/Amenities"
 import Packages from "../components/Packages"
+import Pricing from "../components/Pricing"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -58,6 +59,7 @@ export default function Home() {
         <People />
         <Packages />
         <Amenities />
+        <Pricing />
       </StyledContainer>
     </Layout>
   )

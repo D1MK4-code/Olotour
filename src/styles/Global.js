@@ -202,6 +202,9 @@ const GlobalStyles = createGlobalStyle`
     h2 {
       font-size: 2.5rem;
     }
+    p {
+      font-size: 1rem;
+    }
   }
 
 @media(max-width: 767px) {
@@ -221,9 +224,7 @@ const GlobalStyles = createGlobalStyle`
       font-size: 2rem;
     }
     
-    p {
-      font-size: 1rem;
-    }
+   
 }
 
 `

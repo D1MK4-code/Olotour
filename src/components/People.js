@@ -56,7 +56,6 @@ const StyledPeople = styled.div`
 
   @media (max-width: 767px) {
     padding: 0 1rem;
-    margin-bottom: 2rem;
     > div {
       flex-direction: column-reverse;
     }
