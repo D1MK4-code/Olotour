@@ -47,15 +47,12 @@ const StyledPackages = styled.div`
   }
 
   @media (max-width: 1199px) {
-    min-height: 85vh;
-  }
-
-  @media (max-width: 991px) {
-    min-height: 80vh;
+    min-height: 90vh;
   }
 
   @media (max-width: 767px) {
     padding: 0 1rem;
+    margin-bottom: 2rem;
     > div {
       flex-direction: column;
     }
@@ -123,6 +120,7 @@ const StyledRight = styled.div`
     width: 100%;
     align-items: flex-start;
     min-height: 450px;
+    max-height: 550px;
     position: static;
     transform: none;
     img {
@@ -143,9 +141,19 @@ export default function Packages() {
           <h2>Przewozy paczek</h2>
           <p>
             Na trasie naszego przejazdu świadczymy usługę przewozu paczek oraz
-            przesyłek
+            przesyłek - zarówno tych o mniejszych gabarytach{" "}
+            <strong>(do 15kg) </strong>, pośrednich <strong>(15-30kg) </strong>
+            jak i tych większych <strong>(powyżej 30kg)</strong>.
             <br />
-            <strong>do 30kg / paczka </strong>
+            <br />
+            Cennik za transport przesyłek znajduje się poniżej. W specjalnych
+            sytuacjach, w przypadku cięższych/większych paczek ceny ustalamy z
+            klientami indywidualnie.
+            <br />
+            <br />
+            Zapewniamy państwa, że od początku naszej działalności dokładamy
+            wszelkich starań aby wszystkie nasze usługi spełniały wszelkie
+            oczekiwania.
           </p>
 
           <button type="button">Cennik</button>
@@ -153,7 +161,7 @@ export default function Packages() {
         <StyledRight>
           <StaticImage
             src="../../static/packages-transport.svg"
-            alt="Główne zdjęcie"
+            alt="Zdjęcie transportu paczek"
             placeholder={"tracedSVG"}
             layout={"fullWidth"}
             loading={"lazy"}

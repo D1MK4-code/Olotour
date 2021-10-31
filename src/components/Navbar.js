@@ -30,12 +30,12 @@ const StyledNavbar = styled.nav`
     list-style: none;
     display: flex;
     li {
-      margin-left: 4rem;
+      margin-left: 5rem;
     }
     a {
       font-size: 1rem;
       font-weight: 600;
-      color: #9f9fb9;
+      color: #7e97f3;
       font-style: normal;
       transition: all 0.2s ease-in-out;
       position: relative;
@@ -47,12 +47,12 @@ const StyledNavbar = styled.nav`
         margin: auto;
         width: 0%;
         color: transparent;
-        background: #7d96f2;
+        background: #3f5df4;
         height: 1px;
         transition: all 0.2s ease-in-out;
       }
       &:hover {
-        color: #7d96f2;
+        color: #3f5df4;
         &:after {
           width: 100%;
         }
@@ -162,13 +162,13 @@ export default function Navbar() {
         <Link to="/">OloTour</Link>
         <ul className="nav-links">
           <li>
-            <Link to="/faq">FAQ</Link>
+            <Link to="/cennik">Cennik</Link>
           </li>
           <li>
             <Link to="/galeria">Galeria</Link>
           </li>
           <li>
-            <Link to="/cennik">Cennik</Link>
+            <Link to="/faq">FAQ</Link>
           </li>
         </ul>
         <StyledBurger className="burger">

@@ -149,6 +149,10 @@ export default function Hero() {
             Oferujemy międzynarodowy przewóz osób z adresu pod adres. Dodatkowo
             zajmujemy się również przewozem korespondencji i paczek na tej samej
             trasie.
+            <br /> <br /> Dysponujemy nowoczesnym busem marki Renault, który
+            zapewnia klientom bezpieczeństwo i komfort podczas podróży. Nasz
+            kierowca ma wiele lat doświadczenia w transporcie osób a do miejsca
+            docelowego jedziemy bezpośrednio.
           </p>
           <button type="button">Sprawdź trasę</button>
         </StyledLeft>

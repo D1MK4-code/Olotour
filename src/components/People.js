@@ -144,7 +144,7 @@ export default function People() {
         <StyledLeft>
           <StaticImage
             src="../../static/people-transport.svg"
-            alt="Główne zdjęcie"
+            alt="Zdjęcie transportu pasażerów"
             placeholder={"tracedSVG"}
             layout={"fullWidth"}
             loading={"lazy"}
@@ -153,6 +153,14 @@ export default function People() {
         <StyledRight>
           <h2>Przewozy międzynarodowe</h2>
           <p>
+            <strong> OloTour </strong>świadczy kompleksowe usługi przewozu za
+            granicę w systemie
+            <strong> door-to-door. </strong>
+            Jadąc z nami masz pewność, że będziesz w każdym docelowym miejscu na
+            czas. Z naszych usług transportowych korzystają osoby, które planują
+            urlop, wyjeżdżają służbowo, naukowo oraz osoby, które na stałe
+            pracują za granicą. Jednorazowo możemy przewieźć do 8 pasażerów.
+            <br /> <br />
             Nasza trasa obejmuje następujące kraje: <br />
             <strong>Polska, Belgia, Niemcy, Holandia </strong>
           </p>

@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import Hero from "../components/Hero"
 import People from "../components/People"
+import Amenities from "../components/Amenities"
 import Packages from "../components/Packages"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
@@ -56,6 +57,7 @@ export default function Home() {
         <Hero />
         <People />
         <Packages />
+        <Amenities />
       </StyledContainer>
     </Layout>
   )
