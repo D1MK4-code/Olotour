@@ -47,12 +47,12 @@ const StyledNavbar = styled.nav`
         margin: auto;
         width: 0%;
         color: transparent;
-        background: #3f5df4;
+        background: #7d96f2;
         height: 1px;
         transition: all 0.2s ease-in-out;
       }
       &:hover {
-        color: #3f5df4;
+        color: #7d96f2;
         &:after {
           width: 100%;
         }

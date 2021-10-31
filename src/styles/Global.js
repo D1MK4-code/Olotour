@@ -146,11 +146,84 @@ const GlobalStyles = createGlobalStyle`
     width: 100vw;
   }
 
+  h1, h2, h3 {
+    color: #070879;
+    line-height: 1.2em;
+
+  }
+
+  p {
+    color: #9f9fb9;
+    line-height: 1.15em;
+    font-size: 1.125rem;
+    strong {
+      font-weight: 600;
+      line-height: 1.5em;
+    }
+  }
+
+  h2 {
+    font-size: 3.5rem;
+  }
+
+  button {
+    background-color: #fe7062;
+    border: none;
+    outline: none;
+    border-radius: 0.35rem;
+    color: #fff;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    z-index: 4;
+    &:hover {
+      background-color: #3f5df4;
+    }
+  }
+
+  @media (max-width: 1399px) {
+    h2 {
+      font-size: 3rem;
+    }
+  }
+
+  @media(max-width: 1199px) {
+    h2 {
+      font-size: 2.75rem;
+    }
+  }
+
+  @media(max-width: 991px) {
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
 
 @media(max-width: 767px) {
   body {
     overflow-x: hidden;
   }
+  h2 {
+      font-size: 2.25rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+}
+
+@media(max-width: 575px) {
+  h2 {
+      font-size: 2rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
 }
 
 `

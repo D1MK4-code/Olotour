@@ -3,7 +3,7 @@ import styled from "styled-components"
 import GlobalStyles from "../styles/Global"
 import { StaticImage } from "gatsby-plugin-image"
 
-const StyledHero = styled.div`
+const StyledPeople = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,6 +11,7 @@ const StyledHero = styled.div`
   justify-content: center;
   width: 100%;
   padding: 0 2rem;
+  position: relative;
   div {
     max-width: 1400px;
     margin: 0 auto;
@@ -21,63 +22,60 @@ const StyledHero = styled.div`
   > div {
     width: 100%;
   }
-  h1 {
-    font-size: 4rem;
+  h2 {
+    line-height: 1.2em;
     margin-bottom: 2rem;
+    color: #070879;
     position: relative;
     z-index: 4;
   }
   p {
     margin-bottom: 1.5rem;
-    max-width: 300px;
+    color: #9f9fb9;
     position: relative;
     z-index: 4;
   }
 
   @media (min-width: 1921px) {
     position: relative;
+    min-height: 55vh;
   }
 
-  @media (max-width: 1399px) {
-    h1 {
-      font-size: 3.5rem;
-    }
+  @media (min-width: 2200px) {
+    position: relative;
+    min-height: auto;
   }
+
   @media (max-width: 1199px) {
-    h1 {
-      font-size: 3rem;
-    }
+    min-height: 75vh;
   }
+
+  @media (max-width: 991px) {
+    min-height: 50vh;
+  }
+
   @media (max-width: 767px) {
     padding: 0 1rem;
+    margin-bottom: 2rem;
     > div {
-      flex-direction: column;
-      &:first-child {
-        padding-top: 8rem;
-      }
+      flex-direction: column-reverse;
     }
-    h1,
+    h2,
     p {
       max-width: 600px;
       width: 100%;
     }
-    h1 {
-      font-size: 2.5rem;
+    h2 {
       margin-bottom: 1.5rem;
     }
   }
   @media (max-width: 575px) {
     min-height: auto;
-    h1 {
-      font-size: 2.25rem;
-    }
-    p {
-      font-size: 1rem;
-    }
+    padding: 3rem 1rem 0;
   }
 `
 
-const StyledLeft = styled.div`
+const StyledRight = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -85,22 +83,24 @@ const StyledLeft = styled.div`
   position: relative;
   z-index: 5;
   width: 40%;
-  margin: 0 auto 0 0 !important;
+  margin: 0 0 0 auto !important;
   @media (max-width: 767px) {
     width: 100%;
+    padding-bottom: 2rem;
   }
 `
 
-const StyledRight = styled.div`
+const StyledLeft = styled.div`
   display: block;
   min-height: 515px;
   position: absolute;
   align-items: flex-end;
   z-index: 1;
-  width: 60%;
-  bottom: 0px;
-  right: 0px;
+  width: 50%;
+  bottom: 50%;
+  left: 0px;
   max-width: 1150px;
+  transform: translateY(50%);
   div {
     width: 100%;
   }
@@ -111,11 +111,11 @@ const StyledRight = styled.div`
     bottom: 50%;
     transform: translateY(50%);
   }
-  @media (max-width: 1599px) {
-    width: 65%;
-  }
   @media (max-width: 1399px) {
     align-items: center;
+  }
+  @media (max-width: 1199px) {
+    width: 55%;
   }
   @media (max-width: 991px) {
     width: 60%;
@@ -123,9 +123,10 @@ const StyledRight = styled.div`
   @media (max-width: 767px) {
     width: 100%;
     align-items: flex-start;
-    padding-top: 2rem;
     min-height: 450px;
+    max-height: 550px;
     position: static;
+    transform: none;
     img {
       max-width: 550px;
       margin: 0 auto;
@@ -136,32 +137,34 @@ const StyledRight = styled.div`
   }
 `
 
-export default function Hero() {
+export default function People() {
   return (
-    <StyledHero>
+    <StyledPeople>
       <div>
         <StyledLeft>
-          <h1>
-            Za granicę <br />
-            jedź z nami!
-          </h1>
-          <p>
-            Oferujemy międzynarodowy przewóz osób z adresu pod adres. Dodatkowo
-            zajmujemy się również przewozem korespondencji i paczek na tej samej
-            trasie.
-          </p>
-          <button type="button">Sprawdź trasę</button>
-        </StyledLeft>
-        <StyledRight>
           <StaticImage
-            src="../../static/hero-bg.svg"
+            src="../../static/people-transport.svg"
             alt="Główne zdjęcie"
             placeholder={"tracedSVG"}
             layout={"fullWidth"}
-            loading={"eager"}
+            loading={"lazy"}
           />
+        </StyledLeft>
+        <StyledRight>
+          <h2>Przewozy międzynarodowe</h2>
+          <p>
+            Nasza trasa obejmuje następujące kraje: <br />
+            <strong>Polska, Belgia, Niemcy, Holandia </strong>
+          </p>
+          <p>
+            Województwa, które obsługujemy to: <br />
+            <strong>
+              Małopolskie, Śląskie, Opolskie, Dolnośląskie, Podkarpackie
+            </strong>
+          </p>
+          <button type="button">Cennik</button>
         </StyledRight>
       </div>
-    </StyledHero>
+    </StyledPeople>
   )
 }

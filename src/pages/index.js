@@ -1,6 +1,8 @@
 import React from "react"
 import Layout from "../components/Layout"
 import Hero from "../components/Hero"
+import People from "../components/People"
+import Packages from "../components/Packages"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -15,6 +17,7 @@ const StyledContainer = styled.section`
       z-index: 3;
     }
   }
+
   @media (max-width: 1399px) {
     > .gatsby-image-wrapper {
       &:first-child {
@@ -51,6 +54,8 @@ export default function Home() {
           style={{ position: "absolute" }}
         />
         <Hero />
+        <People />
+        <Packages />
       </StyledContainer>
     </Layout>
   )
