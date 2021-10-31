@@ -29,7 +29,7 @@ const StyledHero = styled.div`
   }
   p {
     margin-bottom: 1.5rem;
-    max-width: 300px;
+    max-width: 500px;
     position: relative;
     z-index: 4;
   }
