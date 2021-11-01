@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import GlobalStyles from "../styles/Global"
+import scrollTo from "gatsby-plugin-smoothscroll"
+
 import { StaticImage } from "gatsby-plugin-image"
 
 const StyledPackages = styled.div`
@@ -154,10 +156,9 @@ export default function Packages() {
             wszelkich starań aby wszystkie nasze usługi spełniały wszelkie
             oczekiwania.
           </p>
-
-          <a className={"button"} href="#pricing">
+          <button className={"button"} onClick={() => scrollTo("#pricing")}>
             Cennik
-          </a>
+          </button>
         </StyledLeft>
         <StyledRight>
           <StaticImage

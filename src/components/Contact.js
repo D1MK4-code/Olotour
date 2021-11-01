@@ -101,7 +101,7 @@ const LeftWrapper = styled.div`
   }
   @media (max-width: 575px) {
     .gatsby-image-wrapper {
-      height: 300px;
+      height: 400px;
     }
   }
 `
@@ -284,7 +284,7 @@ export default function Contact() {
         </LeftWrapper>
         <RightWrapper>
           <h2>Kontakt</h2>
-          <form method="post" name="contactform">
+          <form method="post" name="contactform" data-netlify="true">
             <input type="hidden" name="form-name" value="contactform" />
             <div>
               <label for="name">Imię:</label>

@@ -6,6 +6,7 @@ import Amenities from "../components/Amenities"
 import Packages from "../components/Packages"
 import Pricing from "../components/Pricing"
 import Contact from "../components/Contact"
+import scrollTo from "gatsby-plugin-smoothscroll"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 

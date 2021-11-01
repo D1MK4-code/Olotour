@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import GlobalStyles from "../styles/Global"
+import scrollTo from "gatsby-plugin-smoothscroll"
+
 import { StaticImage } from "gatsby-plugin-image"
 
 const StyledPeople = styled.div`
@@ -138,7 +140,7 @@ const StyledLeft = styled.div`
 
 export default function People() {
   return (
-    <StyledPeople>
+    <StyledPeople id="people">
       <div>
         <StyledLeft>
           <StaticImage
@@ -169,9 +171,9 @@ export default function People() {
               Małopolskie, Śląskie, Opolskie, Dolnośląskie, Podkarpackie
             </strong>
           </p>
-          <a className={"button"} href="#pricing">
+          <button className={"button"} onClick={() => scrollTo("#pricing")}>
             Cennik
-          </a>
+          </button>
         </StyledRight>
       </div>
     </StyledPeople>

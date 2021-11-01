@@ -1,5 +1,6 @@
 import { Link } from "gatsby"
 import React, { useEffect } from "react"
+import scrollTo from "gatsby-plugin-smoothscroll"
 import styled from "styled-components"
 
 const StyledNavbar = styled.nav`
@@ -32,13 +33,19 @@ const StyledNavbar = styled.nav`
     li {
       margin-left: 5rem;
     }
-    a {
+    a,
+    button {
       font-size: 1rem;
       font-weight: 600;
       color: #7e97f3;
       font-style: normal;
       transition: all 0.2s ease-in-out;
       position: relative;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background: transparent;
+      padding: 0;
       &:after {
         content: "";
         position: absolute;
@@ -86,10 +93,12 @@ const StyledNavbar = styled.nav`
         margin: 0 0 2.5rem 0;
         pointer-events: all;
       }
-      a {
+      a,
+      button {
         color: #070879;
         font-size: 1.5rem;
         pointer-events: all;
+        background: transparent;
       }
       &.active {
         transform: translateX(0);
@@ -162,7 +171,7 @@ export default function Navbar() {
         <Link to="/">OloTour</Link>
         <ul className="nav-links">
           <li>
-            <Link to="/cennik">Cennik</Link>
+            <button onClick={() => scrollTo("#pricing")}>Cennik</button>
           </li>
           <li>
             <Link to="/galeria">Galeria</Link>

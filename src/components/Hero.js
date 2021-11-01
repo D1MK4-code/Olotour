@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import GlobalStyles from "../styles/Global"
+import scrollTo from "gatsby-plugin-smoothscroll"
+
 import { StaticImage } from "gatsby-plugin-image"
 
 const StyledHero = styled.div`
@@ -154,9 +156,9 @@ export default function Hero() {
             kierowca ma wiele lat doświadczenia w transporcie osób a do miejsca
             docelowego jedziemy bezpośrednio.
           </p>
-          <a className="button" href="#pricing">
+          <button className="button" onClick={() => scrollTo("#people")}>
             Sprawdź trasę
-          </a>
+          </button>
         </StyledLeft>
         <StyledRight>
           <StaticImage
