@@ -284,7 +284,12 @@ export default function Contact() {
         </LeftWrapper>
         <RightWrapper>
           <h2>Kontakt</h2>
-          <form method="post" name="contactform" data-netlify="true">
+          <form
+            method="post"
+            name="contactform"
+            data-netlify="true"
+            action="/podziekowanie"
+          >
             <input type="hidden" name="form-name" value="contactform" />
             <div>
               <label for="name">Imię:</label>
