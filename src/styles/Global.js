@@ -140,13 +140,19 @@ const GlobalStyles = createGlobalStyle`
   html {
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
   }
+
+  html, 
+body {
+    overflow-x: hidden; 
+}
 
   #gatsby-focus-wrapper {
     width: 100vw;
   }
 
-  h1, h2, h3 {
+  h1, h2, h3, h4, h5, h6 {
     color: #070879;
     line-height: 1.2em;
 
@@ -166,7 +172,7 @@ const GlobalStyles = createGlobalStyle`
     font-size: 3.5rem;
   }
 
-  button {
+  .button {
     background-color: #fe7062;
     border: none;
     outline: none;
@@ -181,6 +187,7 @@ const GlobalStyles = createGlobalStyle`
     transition: all 0.2s ease-in-out;
     position: relative;
     z-index: 4;
+    text-decoration: none;
     &:hover {
       background-color: #3f5df4;
     }

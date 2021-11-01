@@ -154,7 +154,9 @@ export default function Hero() {
             kierowca ma wiele lat doświadczenia w transporcie osób a do miejsca
             docelowego jedziemy bezpośrednio.
           </p>
-          <button type="button">Sprawdź trasę</button>
+          <a className="button" href="#pricing">
+            Sprawdź trasę
+          </a>
         </StyledLeft>
         <StyledRight>
           <StaticImage

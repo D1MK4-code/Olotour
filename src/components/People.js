@@ -169,7 +169,9 @@ export default function People() {
               Małopolskie, Śląskie, Opolskie, Dolnośląskie, Podkarpackie
             </strong>
           </p>
-          <button type="button">Cennik</button>
+          <a className={"button"} href="#pricing">
+            Cennik
+          </a>
         </StyledRight>
       </div>
     </StyledPeople>

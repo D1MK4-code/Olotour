@@ -155,7 +155,9 @@ export default function Packages() {
             oczekiwania.
           </p>
 
-          <button type="button">Cennik</button>
+          <a className={"button"} href="#pricing">
+            Cennik
+          </a>
         </StyledLeft>
         <StyledRight>
           <StaticImage

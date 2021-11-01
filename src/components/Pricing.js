@@ -134,7 +134,7 @@ const SingleCard = styled.div`
 
 export default function Pricing() {
   return (
-    <StyledPricing>
+    <StyledPricing id="pricing">
       <div>
         <h2>Cennik</h2>
         <CardWrapper>

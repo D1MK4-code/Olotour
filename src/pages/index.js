@@ -5,6 +5,7 @@ import People from "../components/People"
 import Amenities from "../components/Amenities"
 import Packages from "../components/Packages"
 import Pricing from "../components/Pricing"
+import Contact from "../components/Contact"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -60,6 +61,7 @@ export default function Home() {
         <Packages />
         <Amenities />
         <Pricing />
+        <Contact />
       </StyledContainer>
     </Layout>
   )

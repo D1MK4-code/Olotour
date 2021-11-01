@@ -249,7 +249,9 @@ export default function Amenities() {
               />
             </li>
           </ul>
-          <button type="button">Skontaktuj się</button>
+          <a className={"button"} href="#contact">
+            Skontaktuj się
+          </a>
         </StyledRight>
       </div>
     </StyledAmenities>
