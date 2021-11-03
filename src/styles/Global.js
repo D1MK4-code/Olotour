@@ -1,4 +1,8 @@
 import { createGlobalStyle } from "styled-components"
+import "@fontsource/montserrat/400.css"
+import "@fontsource/montserrat/500.css"
+import "@fontsource/montserrat/600.css"
+import "@fontsource/montserrat/700.css"
 
 const GlobalStyles = createGlobalStyle`
 
@@ -173,23 +177,23 @@ body {
   }
 
   .button {
-    background-color: #fe7062;
+    background-color: #f22e2e;
     border: none;
     outline: none;
     border-radius: 0.35rem;
     color: #fff;
     font-size: 0.875rem;
     text-transform: uppercase;
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 1.5rem;
     font-weight: 600;
     letter-spacing: 0.5px;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.15s ease-in-out;
     position: relative;
     z-index: 4;
     text-decoration: none;
     &:hover {
-      background-color: #3f5df4;
+      box-shadow: #f22e2e 0px 0px 0px 0px, #f22e2e 0px 0px 0px 3px;
     }
   }
 

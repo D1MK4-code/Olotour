@@ -20,10 +20,10 @@ const StyledNavbar = styled.nav`
     align-items: center;
   }
   a {
-    font-weight: 500;
-    font-size: 1.5rem;
+    font-weight: 700;
+    font-size: 1.75rem;
     line-height: 1.2em;
-    color: #fe7062;
+    color: #f22e2e;
     text-decoration: none;
     font-style: italic;
   }
@@ -36,10 +36,10 @@ const StyledNavbar = styled.nav`
     a,
     button {
       font-size: 1rem;
-      font-weight: 600;
-      color: #7e97f3;
+      font-weight: 700;
+      color: #111;
       font-style: normal;
-      transition: all 0.2s ease-in-out;
+      transition: all 0.15s ease-in-out;
       position: relative;
       border: none;
       outline: none;
@@ -54,12 +54,12 @@ const StyledNavbar = styled.nav`
         margin: auto;
         width: 0%;
         color: transparent;
-        background: #3f5df4;
+        background: #f22e2e;
         height: 1px;
-        transition: all 0.2s ease-in-out;
+        transition: all 0.15s ease-in-out;
       }
       &:hover {
-        color: #3f5df4;
+        color: #f22e2e;
         &:after {
           width: 100%;
         }
@@ -84,7 +84,7 @@ const StyledNavbar = styled.nav`
       align-items: center;
       justify-content: flex-start;
       width: 100%;
-      background-color: #f5f8ff;
+      background-color: #333;
       transform: translateX(100%);
       transition: transform 0.3s ease-in;
       padding: 8rem 0 0;
@@ -95,7 +95,7 @@ const StyledNavbar = styled.nav`
       }
       a,
       button {
-        color: #070879;
+        color: #fff;
         font-size: 1.5rem;
         pointer-events: all;
         background: transparent;
@@ -115,7 +115,7 @@ const StyledBurger = styled.div`
   div {
     width: 2rem;
     height: 3px;
-    background-color: #070879;
+    background-color: #fff;
     margin: 0.35rem;
     transition: all 0.3s ease;
   }

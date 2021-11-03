@@ -13,27 +13,45 @@ const StyledHero = styled.div`
   justify-content: center;
   width: 100%;
   padding: 0 2rem;
-  div {
+  > div {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    justify-content: center;
-  }
-  > div {
     width: 100%;
+  }
+
+  .gatsby-image-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(90deg, #000 40%, hsla(0, 0%, 94.5%, 0));
+      opacity: 0.7;
+      z-index: 0;
+    }
   }
   h1 {
     font-size: 4rem;
     margin-bottom: 2rem;
     position: relative;
     z-index: 4;
+    font-weight: 700;
+    color: #fff;
   }
   p {
     margin-bottom: 1.5rem;
     max-width: 500px;
     position: relative;
     z-index: 4;
+    color: #fff;
   }
 
   @media (min-width: 1921px) {
@@ -58,6 +76,18 @@ const StyledHero = styled.div`
         padding-top: 8rem;
       }
     }
+    .gatsby-image-wrapper {
+      &:after {
+        content: "";
+        position: absolute;
+        background: rgba(0, 0, 0, 0.7);
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+    }
     h1,
     p {
       max-width: 600px;
@@ -77,6 +107,15 @@ const StyledHero = styled.div`
       font-size: 1rem;
     }
   }
+  @media (max-width: 340px) {
+    min-height: auto;
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 0.9375rem;
+    }
+  }
 `
 
 const StyledLeft = styled.div`
@@ -93,55 +132,17 @@ const StyledLeft = styled.div`
   }
 `
 
-const StyledRight = styled.div`
-  display: block;
-  min-height: 515px;
-  position: absolute;
-  align-items: flex-end;
-  z-index: 1;
-  width: 60%;
-  bottom: 0px;
-  right: 0px;
-  max-width: 1150px;
-  div {
-    width: 100%;
-  }
-  img {
-    height: auto;
-  }
-  @media (min-width: 1921px) {
-    bottom: 50%;
-    transform: translateY(50%);
-  }
-  @media (max-width: 1599px) {
-    width: 65%;
-  }
-  @media (max-width: 1399px) {
-    align-items: center;
-  }
-  @media (max-width: 991px) {
-    width: 60%;
-  }
-  @media (max-width: 767px) {
-    width: 100%;
-    align-items: flex-start;
-    padding-top: 2rem;
-    min-height: 450px;
-    position: static;
-    img {
-      max-width: 550px;
-      margin: 0 auto;
-    }
-  }
-  @media (max-width: 575px) {
-    min-height: auto;
-  }
-`
-
 export default function Hero() {
   return (
     <StyledHero>
       <div>
+        <StaticImage
+          src="../../static/bus.jpg"
+          alt="Główne zdjęcie"
+          placeholder={"tracedSVG"}
+          layout={"fullWidth"}
+          loading={"eager"}
+        />
         <StyledLeft>
           <h1>
             Za granicę <br />
@@ -160,15 +161,6 @@ export default function Hero() {
             Sprawdź trasę
           </button>
         </StyledLeft>
-        <StyledRight>
-          <StaticImage
-            src="../../static/hero-bg.svg"
-            alt="Główne zdjęcie"
-            placeholder={"tracedSVG"}
-            layout={"fullWidth"}
-            loading={"eager"}
-          />
-        </StyledRight>
       </div>
     </StyledHero>
   )

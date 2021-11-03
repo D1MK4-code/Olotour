@@ -51,18 +51,7 @@ export default function Home() {
   return (
     <Layout>
       <StyledContainer>
-        <StaticImage
-          src="../../static/wave-left.svg"
-          alt="Fala"
-          placeholder={"none"}
-          style={{ position: "absolute" }}
-        />
         <Hero />
-        <People />
-        <Packages />
-        <Amenities />
-        <Pricing />
-        <Contact />
       </StyledContainer>
     </Layout>
   )
