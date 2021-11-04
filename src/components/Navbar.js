@@ -171,6 +171,7 @@ export default function Navbar() {
         <Link to="/">OloTour</Link>
         <ul className="nav-links">
           <li>
+            {/* <button onClick={() => scrollTo("#pricing")}>Cennik</button> */}
             <button onClick={() => scrollTo("#pricing")}>Cennik</button>
           </li>
           <li>

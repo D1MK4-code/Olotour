@@ -260,7 +260,7 @@ export default function Pricing() {
                   loading={"lazy"}
                   height={"24"}
                 />
-                Podróż z obie strony
+                Podróż z punktu A do punktu B
               </li>
               <li>
                 {" "}
@@ -272,7 +272,7 @@ export default function Pricing() {
                   loading={"lazy"}
                   height={"24"}
                 />
-                Odbiory z obu miejsc ustala pasażer
+                Odbiór z miejsca ustalonego przez pasażera
               </li>
               <li>
                 {" "}
