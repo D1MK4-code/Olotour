@@ -157,15 +157,14 @@ body {
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color: #070879;
+    color: #353535;
     line-height: 1.2em;
-
   }
 
   p {
-    color: #9f9fb9;
-    line-height: 1.15em;
-    font-size: 1.125rem;
+    color: #929292;
+    line-height: 1.4em;
+    font-size: 1rem;
     strong {
       font-weight: 600;
       line-height: 1.5em;
@@ -173,7 +172,8 @@ body {
   }
 
   h2 {
-    font-size: 3.5rem;
+    font-size: 2.25rem;
+    font-weight: 600;
   }
 
   .button {
@@ -199,22 +199,19 @@ body {
 
   @media (max-width: 1399px) {
     h2 {
-      font-size: 3rem;
+      font-size: 2rem;
     }
   }
 
   @media(max-width: 1199px) {
     h2 {
-      font-size: 2.75rem;
+      font-size: 1.75rem;
     }
   }
 
   @media(max-width: 991px) {
-    h2 {
-      font-size: 2.5rem;
-    }
     p {
-      font-size: 1rem;
+      font-size: .9375rem;
     }
   }
 
@@ -223,7 +220,7 @@ body {
     overflow-x: hidden;
   }
   h2 {
-      font-size: 2.25rem;
+      font-size: 1.5rem;
     }
     p {
       margin-bottom: 1rem;
@@ -231,11 +228,6 @@ body {
 }
 
 @media(max-width: 575px) {
-  h2 {
-      font-size: 2rem;
-    }
-    
-   
 }
 
 `

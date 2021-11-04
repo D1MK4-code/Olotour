@@ -6,7 +6,6 @@ import scrollTo from "gatsby-plugin-smoothscroll"
 import { StaticImage } from "gatsby-plugin-image"
 
 const StyledPeople = styled.div`
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -14,6 +13,7 @@ const StyledPeople = styled.div`
   width: 100%;
   padding: 0 2rem;
   position: relative;
+  margin-bottom: 4rem;
   div {
     max-width: 1400px;
     margin: 0 auto;
@@ -27,37 +27,23 @@ const StyledPeople = styled.div`
   h2 {
     line-height: 1.2em;
     margin-bottom: 2rem;
-    color: #070879;
     position: relative;
     z-index: 4;
+  }
+  hr {
+    color: #f3f3f3;
+    width: 100%;
+    margin-bottom: 2rem;
   }
   p {
     margin-bottom: 1.5rem;
-    color: #9f9fb9;
     position: relative;
     z-index: 4;
   }
-
-  @media (min-width: 1921px) {
-    position: relative;
-    min-height: 55vh;
-  }
-
-  @media (min-width: 2200px) {
-    position: relative;
-    min-height: auto;
-  }
-
-  @media (max-width: 1199px) {
-    min-height: 75vh;
-  }
-
-  @media (max-width: 991px) {
-    min-height: 50vh;
-  }
-
   @media (max-width: 767px) {
     padding: 0 1rem;
+    /* margin-bottom: 3rem; */
+    margin-bottom: 0;
     > div {
       flex-direction: column-reverse;
     }
@@ -70,10 +56,6 @@ const StyledPeople = styled.div`
       margin-bottom: 1.5rem;
     }
   }
-  @media (max-width: 575px) {
-    min-height: auto;
-    padding: 3rem 1rem 0;
-  }
 `
 
 const StyledRight = styled.div`
@@ -83,7 +65,7 @@ const StyledRight = styled.div`
   align-items: flex-start;
   position: relative;
   z-index: 5;
-  width: 40%;
+  width: 50%;
   margin: 0 0 0 auto !important;
   @media (max-width: 767px) {
     width: 100%;
@@ -94,32 +76,18 @@ const StyledRight = styled.div`
 const StyledLeft = styled.div`
   display: block;
   min-height: 515px;
-  position: absolute;
+  position: static;
   align-items: flex-end;
   z-index: 1;
   width: 50%;
-  bottom: 50%;
-  left: 0px;
-  max-width: 1150px;
-  transform: translateY(50%);
   div {
     width: 100%;
   }
   img {
     height: auto;
   }
-  @media (min-width: 1921px) {
-    bottom: 50%;
-    transform: translateY(50%);
-  }
   @media (max-width: 1399px) {
     align-items: center;
-  }
-  @media (max-width: 1199px) {
-    width: 55%;
-  }
-  @media (max-width: 991px) {
-    width: 60%;
   }
   @media (max-width: 767px) {
     width: 100%;
@@ -144,7 +112,7 @@ export default function People() {
       <div>
         <StyledLeft>
           <StaticImage
-            src="../../static/people-transport.svg"
+            src="../../static/bus2.jpeg"
             alt="Zdjęcie transportu pasażerów"
             placeholder={"tracedSVG"}
             layout={"fullWidth"}
@@ -171,6 +139,7 @@ export default function People() {
               Małopolskie, Śląskie, Opolskie, Dolnośląskie, Podkarpackie
             </strong>
           </p>
+          <hr />
           <button className={"button"} onClick={() => scrollTo("#pricing")}>
             Cennik
           </button>

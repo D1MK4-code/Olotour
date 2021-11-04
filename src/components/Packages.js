@@ -6,7 +6,6 @@ import scrollTo from "gatsby-plugin-smoothscroll"
 import { StaticImage } from "gatsby-plugin-image"
 
 const StyledPackages = styled.div`
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -14,6 +13,8 @@ const StyledPackages = styled.div`
   width: 100%;
   padding: 0 2rem;
   position: relative;
+  margin-bottom: 4rem;
+
   div {
     max-width: 1400px;
     margin: 0 auto;
@@ -27,33 +28,18 @@ const StyledPackages = styled.div`
   h2 {
     line-height: 1.2em;
     margin-bottom: 2rem;
-    color: #070879;
     position: relative;
     z-index: 4;
   }
   p {
     margin-bottom: 1.5rem;
-    color: #9f9fb9;
     position: relative;
     z-index: 4;
   }
-
-  @media (min-width: 1921px) {
-    position: relative;
-    min-height: 55vh;
-  }
-
-  @media (min-width: 2200px) {
-    position: relative;
-    min-height: auto;
-  }
-
-  @media (max-width: 1199px) {
-    min-height: 90vh;
-  }
-
   @media (max-width: 767px) {
     padding: 0 1rem;
+    margin-bottom: 3rem;
+
     > div {
       flex-direction: column;
     }
@@ -79,7 +65,7 @@ const StyledLeft = styled.div`
   align-items: flex-start;
   position: relative;
   z-index: 5;
-  width: 40%;
+  width: 50%;
   margin: 0 auto 0 0 !important;
   @media (max-width: 767px) {
     width: 100%;
@@ -90,32 +76,18 @@ const StyledLeft = styled.div`
 const StyledRight = styled.div`
   display: block;
   min-height: 515px;
-  position: absolute;
+  position: static;
   align-items: flex-end;
   z-index: 1;
   width: 50%;
-  bottom: 50%;
-  right: 0px;
-  max-width: 1150px;
-  transform: translateY(50%);
   div {
     width: 100%;
   }
   img {
     height: auto;
   }
-  @media (min-width: 1921px) {
-    bottom: 50%;
-    transform: translateY(50%);
-  }
   @media (max-width: 1399px) {
     align-items: center;
-  }
-  @media (max-width: 1199px) {
-    width: 55%;
-  }
-  @media (max-width: 991px) {
-    width: 60%;
   }
   @media (max-width: 767px) {
     width: 100%;
@@ -162,7 +134,7 @@ export default function Packages() {
         </StyledLeft>
         <StyledRight>
           <StaticImage
-            src="../../static/packages-transport.svg"
+            src="../../static/paczki.jpeg"
             alt="Zdjęcie transportu paczek"
             placeholder={"tracedSVG"}
             layout={"fullWidth"}

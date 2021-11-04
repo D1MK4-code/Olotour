@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import Hero from "../components/Hero"
 import People from "../components/People"
+import Author from "../components/Author"
 import Amenities from "../components/Amenities"
 import Packages from "../components/Packages"
 import Pricing from "../components/Pricing"
@@ -52,6 +53,10 @@ export default function Home() {
     <Layout>
       <StyledContainer>
         <Hero />
+        <People />
+        <Packages />
+        <Author />
+        <Pricing />
       </StyledContainer>
     </Layout>
   )

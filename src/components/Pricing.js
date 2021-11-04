@@ -25,7 +25,6 @@ const StyledPricing = styled.div`
   h2 {
     line-height: 1.2em;
     margin-bottom: 2rem;
-    color: #070879;
     position: relative;
     z-index: 4;
   }
@@ -69,7 +68,7 @@ const CardWrapper = styled.div`
 const SingleCard = styled.div`
   width: calc(33% - 20px);
   margin: 0 30px 0 0;
-  box-shadow: 0 0px 10px 2px #e0e0ee;
+  box-shadow: 0 0px 10px 2px #dedede;
   padding: 1.5rem;
   border-radius: 0.75rem;
   &::last-child {
@@ -82,13 +81,13 @@ const SingleCard = styled.div`
   h5 {
     font-size: 1.125rem;
     margin-bottom: 1.5rem;
-    color: #9090a8;
   }
   p {
     font-size: 1rem;
   }
   span {
-    color: #070879;
+    color: #353535;
+
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
   }
@@ -99,7 +98,7 @@ const SingleCard = styled.div`
     li {
       margin-bottom: 1.5rem;
       font-size: 0.9375rem;
-      color: #9090a8;
+      color: #737373;
       font-weight: 600;
       padding-left: 2.5rem;
       position: relative;
@@ -140,11 +139,8 @@ export default function Pricing() {
         <CardWrapper>
           <SingleCard>
             <h5>Przejazd jednorazowy</h5>
-            <span>350zł</span>
-            <p>
-              Cena dotyczy jednorazowego przejazdu z punktu odbioru pasażera do
-              punktu końcowego.
-            </p>
+            <span>400zł / 90€</span>
+            <p>Powyższa cena dotyczy jednorazowego przejazdu.</p>
             <ul>
               <li>
                 {" "}
@@ -221,12 +217,38 @@ export default function Pricing() {
             </ul>
           </SingleCard>
           <SingleCard>
-            <h5>Przejazd w dwie strony</h5>
-            <span>600zł</span>
-            <p>
-              Cena dotyczy przejazdu w obie strony, z punktów odbioru wybranych
-              przez klienta.
-            </p>
+            <h5>Przewóz paczek i przesyłek</h5>
+            <span>150zł / 35€</span>
+            <p>Ceny większych paczek są ustalane indywidualnie</p>
+            <ul>
+              <li>
+                <StaticImage
+                  src="../../static/package.svg"
+                  alt="Ikonka paczki"
+                  placeholder={"tracedSVG"}
+                  layout={"fixed"}
+                  loading={"lazy"}
+                  height={"20"}
+                />
+                do 30kg - 150zł / 35€
+              </li>
+              <li>
+                <StaticImage
+                  src="../../static/package.svg"
+                  alt="Ikonka paczki"
+                  placeholder={"tracedSVG"}
+                  layout={"fixed"}
+                  loading={"lazy"}
+                  height={"25"}
+                />
+                ponad 30kg - cenę ustalam indywidualnie
+              </li>
+            </ul>
+          </SingleCard>
+          <SingleCard>
+            <h5>Karta stałego klienta</h5>
+            <span>-50%</span>
+            <p>Co 6-ty przejazd kosztuje -50% ceny jednorazowego przejazdu</p>
             <ul>
               <li>
                 {" "}
@@ -299,46 +321,6 @@ export default function Pricing() {
                   height={"24"}
                 />
                 Miła atmosfera
-              </li>
-            </ul>
-          </SingleCard>
-          <SingleCard>
-            <h5>Przewóz paczek i przesyłek</h5>
-            <span>100-200zł</span>
-            <p>Ceny są zróżnicowane w zależności od gabarytów przesyłki.</p>
-            <ul>
-              <li>
-                <StaticImage
-                  src="../../static/package.svg"
-                  alt="Ikonka paczki"
-                  placeholder={"tracedSVG"}
-                  layout={"fixed"}
-                  loading={"lazy"}
-                  height={"18"}
-                />
-                do 15kg - 100zł
-              </li>
-              <li>
-                <StaticImage
-                  src="../../static/package.svg"
-                  alt="Ikonka paczki"
-                  placeholder={"tracedSVG"}
-                  layout={"fixed"}
-                  loading={"lazy"}
-                  height={"22"}
-                />
-                15-30kg - 150zł
-              </li>
-              <li>
-                <StaticImage
-                  src="../../static/package.svg"
-                  alt="Ikonka paczki"
-                  placeholder={"tracedSVG"}
-                  layout={"fixed"}
-                  loading={"lazy"}
-                  height={"26"}
-                />
-                powyżej 30kg - 200zł
               </li>
             </ul>
           </SingleCard>

@@ -5,27 +5,29 @@ import scrollTo from "gatsby-plugin-smoothscroll"
 
 import { StaticImage } from "gatsby-plugin-image"
 
-const StyledHero = styled.div`
-  min-height: 100vh;
+const StyledAuthor = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  padding: 0 2rem;
+  padding: 5rem 2rem;
   margin-bottom: 4rem;
+  position: relative;
   > div {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
     width: 100%;
+    align-items: center;
+    justify-content: center;
   }
   .gatsby-image-wrapper {
     position: absolute;
     left: 0;
     top: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     &:after {
       content: "";
       position: absolute;
@@ -33,18 +35,29 @@ const StyledHero = styled.div`
       top: 0;
       height: 100%;
       width: 100%;
-      background: linear-gradient(90deg, #000 40%, hsla(0, 0%, 94.5%, 0));
-      opacity: 0.7;
+      background: #000;
+      opacity: 0.75;
       z-index: 0;
     }
   }
-  h1 {
-    font-size: 3.25rem;
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 4;
-    font-weight: 700;
+  h3 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem;
     color: #fff;
+    padding-bottom: 1rem;
+    font-weight: 600;
+    z-index: 1;
+    position: relative;
+    &:after {
+      content: "";
+      height: 2px;
+      width: 50px;
+      background-color: #fff;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      position: absolute;
+    }
   }
   p {
     margin-bottom: 1.5rem;
@@ -52,6 +65,7 @@ const StyledHero = styled.div`
     position: relative;
     z-index: 4;
     color: #fff;
+    text-align: center;
   }
   @media (max-width: 1199px) {
     h1 {
@@ -59,13 +73,10 @@ const StyledHero = styled.div`
     }
   }
   @media (max-width: 767px) {
-    padding: 0 1rem;
+    padding: 4rem 1rem;
     margin-bottom: 3rem;
     > div {
       flex-direction: column;
-      &:first-child {
-        padding-top: 8rem;
-      }
     }
     .gatsby-image-wrapper {
       &:after {
@@ -108,57 +119,62 @@ const StyledHero = styled.div`
   }
 `
 
-const StyledLeft = styled.div`
+const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  position: relative;
-  z-index: 5;
-  width: 40%;
-  margin: 0 auto 0 0 !important;
-  @media (max-width: 1199px) {
-    width: 50%;
-  }
-  @media (max-width: 991px) {
-    width: 55%;
-  }
-  @media (max-width: 767px) {
-    width: 100%;
-    padding: 0 0 1rem 0;
+  align-items: center;
+  justify-content: center;
+  .gatsby-image-wrapper {
+    position: relative !important;
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 50%;
+    overflow: visible !important;
+    display: flex;
+    top: auto;
+    left: auto;
+    &:after {
+      display: none !important;
+    }
+    img {
+      width: 100px !important;
+      height: 100px !important;
+      object-fit: cover !important;
+      position: absolute !important;
+      border-radius: 50%;
+    }
   }
 `
 
-export default function Hero() {
+export default function Author() {
   return (
-    <StyledHero>
+    <StyledAuthor>
       <div>
         <StaticImage
-          src="../../static/bus.jpg"
+          src="../../static/autostrada.jpg"
           alt="Główne zdjęcie"
           placeholder={"tracedSVG"}
           layout={"fullWidth"}
-          loading={"eager"}
+          loading={"lazy"}
         />
-        <StyledLeft>
-          <h1>
-            Za granicę <br />
-            jedź z nami!
-          </h1>
+        <StyledContent>
+          <StaticImage
+            src="../../static/lukasz.jpg"
+            alt="Główne zdjęcie"
+            placeholder={"tracedSVG"}
+            layout={"fixed"}
+            height={"100"}
+            width={"100"}
+            loading={"lazy"}
+          />
+          <h3>Łukasz Motyka</h3>
           <p>
-            Oferujemy międzynarodowy przewóz osób z adresu pod adres. Dodatkowo
-            zajmujemy się również przewozem korespondencji i paczek na tej samej
-            trasie.
-            <br /> <br /> Dysponujemy nowoczesnym busem marki Renault, który
-            zapewnia klientom bezpieczeństwo i komfort podczas podróży. Nasz
-            kierowca ma wiele lat doświadczenia w transporcie osób a do miejsca
-            docelowego jedziemy bezpośrednio.
+            Założyciel firmy, doświadczony kierowca z wieloletnim
+            doświadczeniem. Stawia bezpieczeństwo i komfort wszystkich pasażerów
+            na pierwszym miejscu
           </p>
-          <button className="button" onClick={() => scrollTo("#people")}>
-            Sprawdź trasę
-          </button>
-        </StyledLeft>
+        </StyledContent>
       </div>
-    </StyledHero>
+    </StyledAuthor>
   )
 }
