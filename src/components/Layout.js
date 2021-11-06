@@ -1,5 +1,6 @@
 import React from "react"
 import Navbar from "./Navbar"
+import Footer from "./Footer"
 import styled from "styled-components"
 import GlobalStyles from "../styles/Global"
 
@@ -9,9 +10,7 @@ export default function Layout({ children }) {
       <GlobalStyles />
       <Navbar />
       <div>{children}</div>
-      {/* <footer>
-        <p>Copyright 2021 OloTour</p>
-      </footer> */}
+      <Footer />
     </div>
   )
 }

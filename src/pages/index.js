@@ -57,6 +57,7 @@ export default function Home() {
         <Packages />
         <Author />
         <Pricing />
+        <Contact />
       </StyledContainer>
     </Layout>
   )

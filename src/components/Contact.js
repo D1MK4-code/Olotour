@@ -17,6 +17,7 @@ const StyledContact = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
   }
   > div {
     width: 100%;
@@ -24,7 +25,6 @@ const StyledContact = styled.div`
   h2 {
     line-height: 1.2em;
     margin-bottom: 2rem;
-    color: #070879;
     position: relative;
     z-index: 4;
   }
@@ -67,22 +67,14 @@ const LeftWrapper = styled.div`
   padding: 0 1rem;
   .gatsby-image-wrapper {
     width: auto;
-    height: 500px;
     margin: 0 auto 3rem;
   }
   img {
-    height: 100%;
+    height: auto;
+    width: 100%;
   }
 
-  @media (max-width: 1199px) {
-    .gatsby-image-wrapper {
-      margin: 0 auto;
-    }
-  }
   @media (max-width: 991px) {
-    .gatsby-image-wrapper {
-      height: 400px;
-    }
     img {
       height: 100%;
       width: 100%;
@@ -95,13 +87,7 @@ const LeftWrapper = styled.div`
     display: flex;
     flex-direction: column-reverse;
     .gatsby-image-wrapper {
-      height: 600px;
       width: 100%;
-    }
-  }
-  @media (max-width: 575px) {
-    .gatsby-image-wrapper {
-      height: 400px;
     }
   }
 `
@@ -115,7 +101,7 @@ const RightWrapper = styled.div`
       flex-direction: column;
       label {
         font-size: 1rem;
-        color: #9f9fb9;
+        color: #929292;
         margin-bottom: 0.75rem;
       }
       input,
@@ -126,16 +112,17 @@ const RightWrapper = styled.div`
         border: 1px solid #9f9fb9;
         outline: none;
         margin-bottom: 2rem;
-        padding: 1rem;
+        padding: 0.75rem;
+        transition: all 0.15s ease-in-out;
         &:focus,
         &:active,
         &:focus-within,
         &:hover {
-          border: 1px solid #7e97f3;
+          border: 1px solid #353535;
         }
       }
       textarea {
-        height: 180px;
+        height: 150px;
       }
     }
   }
@@ -174,7 +161,7 @@ const RightWrapper = styled.div`
 const DirectContact = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 326px;
+  max-width: 360px;
   margin: 0 auto;
   h6 {
     font-size: 1.5rem;
@@ -194,7 +181,7 @@ const DirectContact = styled.div`
         text-decoration: none;
         transition: all 0.2s ease-in-out;
         &:hover {
-          color: #fe7062;
+          color: #f22e2e;
         }
       }
       div {
@@ -210,9 +197,12 @@ const DirectContact = styled.div`
       padding-top: 0.5rem;
     }
   }
+  @media (max-width: 767px) {
+    margin-bottom: 3rem;
+  }
   @media (max-width: 575px) {
     max-width: 100%;
-    margin: 0;
+    margin: 0 0 3rem;
     ul {
       li {
         a {
@@ -229,7 +219,7 @@ export default function Contact() {
       <div>
         <LeftWrapper>
           <StaticImage
-            src="../../static/contact-bg.svg"
+            src="../../static/contact.svg"
             alt="Zdjęcie kontaktu"
             placeholder={"tracedSVG"}
             layout={"fullWidth"}

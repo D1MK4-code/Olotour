@@ -172,7 +172,11 @@ export default function Navbar() {
         <ul className="nav-links">
           <li>
             {/* <button onClick={() => scrollTo("#pricing")}>Cennik</button> */}
-            <button onClick={() => scrollTo("#pricing")}>Cennik</button>
+            <button>Cennik</button>
+          </li>
+          <li>
+            {/* <button onClick={() => scrollTo("#contact")}>Kontakt</button> */}
+            <button>Kontakt</button>
           </li>
           <li>
             <Link to="/galeria">Galeria</Link>

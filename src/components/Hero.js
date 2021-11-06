@@ -98,7 +98,11 @@ const StyledHero = styled.div`
     }
   }
   @media (max-width: 340px) {
-    min-height: auto;
+    > div {
+      &:first-child {
+        padding-top: 6rem;
+      }
+    }
     h1 {
       font-size: 1.85rem;
     }

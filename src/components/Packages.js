@@ -114,9 +114,9 @@ export default function Packages() {
           <h2>Przewozy paczek</h2>
           <p>
             Na trasie naszego przejazdu świadczymy usługę przewozu paczek oraz
-            przesyłek - zarówno tych o mniejszych gabarytach{" "}
-            <strong>(do 15kg) </strong>, pośrednich <strong>(15-30kg) </strong>
-            jak i tych większych <strong>(powyżej 30kg)</strong>.
+            przesyłek - zarówno tych o standardowych gabarytach
+            <strong> do 30kg </strong>, jak i tych większych
+            <strong> powyżej 30kg</strong>.
             <br />
             <br />
             Cennik za transport przesyłek znajduje się poniżej. W specjalnych
