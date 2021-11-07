@@ -106,8 +106,7 @@ const StyledNavbar = styled.nav`
       }
     }
     .gatsby-image-wrapper {
-      height: 32px !important;
-      width: 104px !important;
+      width: 160px !important;
       img {
         object-fit: contain !important;
       }
@@ -178,7 +177,7 @@ export default function Navbar() {
       <div>
         <Link to="/">
           <StaticImage
-            src="../../static/olotour-logo.png"
+            src="../../static/olotour-v2.png"
             alt="Główne zdjęcie"
             placeholder={"none"}
             layout={"fixed"}
