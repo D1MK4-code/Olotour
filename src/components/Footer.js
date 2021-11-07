@@ -120,7 +120,7 @@ export default function Footer() {
         <div>
           <Link to="/">
             <StaticImage
-              src="../../static/olotour-logo.png"
+              src="../../static/olotour-v2.png"
               alt="Główne zdjęcie"
               placeholder={"none"}
               layout={"fixed"}
