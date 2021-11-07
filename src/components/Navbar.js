@@ -105,6 +105,13 @@ const StyledNavbar = styled.nav`
         transform: translateX(0);
       }
     }
+    .gatsby-image-wrapper {
+      height: 32px !important;
+      width: 104px !important;
+      img {
+        object-fit: contain !important;
+      }
+    }
   }
 `
 
