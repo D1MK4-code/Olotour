@@ -106,10 +106,15 @@ const StyledNavbar = styled.nav`
       }
     }
     .gatsby-image-wrapper {
-      width: 160px !important;
+      width: 200px !important;
       img {
         object-fit: contain !important;
       }
+    }
+  }
+  @media (max-width: 320px) {
+    .gatsby-image-wrapper {
+      width: 160px !important;
     }
   }
 `
