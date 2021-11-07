@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import React, { useEffect } from "react"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import styled from "styled-components"
+import { StaticImage } from "gatsby-plugin-image"
 
 const StyledNavbar = styled.nav`
   background: transparent;
@@ -168,7 +169,17 @@ export default function Navbar() {
   return (
     <StyledNavbar>
       <div>
-        <Link to="/">OloTour</Link>
+        <Link to="/">
+          <StaticImage
+            src="../../static/olotour-logo.png"
+            alt="Główne zdjęcie"
+            placeholder={"none"}
+            layout={"fixed"}
+            height={"40"}
+            loading={"eager"}
+          />
+        </Link>
+
         <ul className="nav-links">
           <li>
             {/* <button onClick={() => scrollTo("#pricing")}>Cennik</button> */}

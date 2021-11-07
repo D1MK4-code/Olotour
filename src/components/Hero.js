@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import GlobalStyles from "../styles/Global"
 import scrollTo from "gatsby-plugin-smoothscroll"
-
 import { StaticImage } from "gatsby-plugin-image"
 
 const StyledHero = styled.div`

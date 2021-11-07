@@ -2,9 +2,10 @@ import { Link } from "gatsby"
 import React, { useEffect } from "react"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import styled from "styled-components"
+import { StaticImage } from "gatsby-plugin-image"
 
 const StyledFooter = styled.nav`
-  background: #353535;
+  background: #494949;
   padding: 1.5rem;
   width: 100vw;
   section {
@@ -80,7 +81,7 @@ const StyledFooter = styled.nav`
   p {
     margin: 0 0 0.75rem 0;
     color: #f0f0f0;
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
   @media (max-width: 575px) {
     padding: 1.5rem 1rem;
@@ -90,7 +91,7 @@ const StyledFooter = styled.nav`
     }
     div {
       a {
-        font-size: 1.125rem;
+        font-size: 1rem;
         margin-bottom: 0.75rem;
         &:last-child {
           margin-bottom: 1.125rem;
@@ -117,7 +118,16 @@ export default function Footer() {
     <StyledFooter>
       <section>
         <div>
-          <Link to="/">OloTour</Link>
+          <Link to="/">
+            <StaticImage
+              src="../../static/olotour-logo.png"
+              alt="Główne zdjęcie"
+              placeholder={"none"}
+              layout={"fixed"}
+              height={"30"}
+              loading={"eager"}
+            />
+          </Link>
           <p>Copyright © 2021 OloTour</p>
           <Link to="/polityka-prywatnosci">Polityka prywatności</Link>
         </div>
