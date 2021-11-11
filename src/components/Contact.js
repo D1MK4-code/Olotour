@@ -42,7 +42,7 @@ const StyledContact = styled.div`
   }
   @media (max-width: 575px) {
     min-height: auto;
-    padding: 3rem 1rem 0;
+    padding: 1rem 1rem 0;
     ul {
       li {
         width: 100%;
@@ -253,7 +253,6 @@ export default function Contact() {
                 <a href="mailto:lukaszmotyka6@wp.pl">lukaszmotyka6@wp.pl</a>
               </li>
               <li>
-                {" "}
                 <StaticImage
                   src="../../static/facebook.svg"
                   alt="Ikonka potwierdzenia"
@@ -267,6 +266,19 @@ export default function Contact() {
                   target="_blank"
                 >
                   Facebook
+                </a>
+              </li>
+              <li>
+                <StaticImage
+                  src="../../static/whatsapp.svg"
+                  alt="Ikonka potwierdzenia"
+                  placeholder={"blurred"}
+                  layout={"fixed"}
+                  loading={"lazy"}
+                  height={"24"}
+                />
+                <a href="https://wa.me/697524834" target="_blank">
+                  WhatsApp
                 </a>
               </li>
             </ul>

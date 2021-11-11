@@ -6,154 +6,104 @@ import scrollTo from "gatsby-plugin-smoothscroll"
 import { StaticImage } from "gatsby-plugin-image"
 
 const StyledAmenities = styled.div`
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
   width: 100%;
   padding: 0 2rem;
   position: relative;
+  margin-bottom: 6rem;
   div {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
   > div {
     width: 100%;
   }
   h2 {
     line-height: 1.2em;
-    margin-bottom: 2rem;
-    color: #070879;
+    margin-bottom: 3rem;
     position: relative;
     z-index: 4;
+    text-align: center;
   }
   ul {
     margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
     li {
-      font-size: 1.125rem;
-      color: #9f9fb9;
-      margin-bottom: 1.5rem;
+      font-size: 1.625rem;
+      color: #737373;
+      font-weight: 600;
       position: relative;
       display: flex;
       align-items: center;
+      justify-content: center;
+      width: 33.333%;
+      padding: 0 1rem;
+      flex-direction: column;
+      margin-bottom: 4rem;
+      text-align: center;
       div {
-        margin: 0 0 0 1rem;
+        margin: 0 0 1.5rem 0;
       }
     }
   }
 
-  @media (min-width: 1921px) {
-    position: relative;
-    min-height: 55vh;
-  }
-
-  @media (min-width: 2200px) {
-    position: relative;
-    min-height: auto;
-  }
-
-  @media (max-width: 1199px) {
-    min-height: 70vh;
-  }
-
   @media (max-width: 991px) {
-    min-height: 60vh;
+    ul {
+      li {
+        font-size: 1.325rem;
+        margin-bottom: 3.5rem;
+        div {
+          margin: 0 0 1.25rem 0;
+        }
+      }
+    }
   }
 
   @media (max-width: 767px) {
     padding: 0 1rem;
-    > div {
-      flex-direction: column-reverse;
+    h2 {
+      width: 100%;
+    }
+    ul {
+      li {
+        font-size: 1.125rem;
+        div {
+          width: 65px !important;
+          height: 65px !important;
+        }
+      }
+    }
+  }
+  @media (max-width: 575px) {
+    min-height: auto;
+    padding: 1rem 1rem 0;
+    margin-bottom: 4rem;
+    div {
+      align-items: flex-start;
     }
     h2 {
-      max-width: 600px;
-      width: 100%;
-      margin-bottom: 1.5rem;
+      text-align: left;
+      margin-bottom: 2rem;
     }
     ul {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
       li {
-        font-size: 1rem;
-        width: 50%;
-      }
-    }
-  }
-  @media (max-width: 575px) {
-    min-height: auto;
-    padding: 3rem 1rem 0;
-    ul {
-      li {
+        flex-direction: row;
+        justify-content: flex-start;
+        max-width: 400px;
         width: 100%;
+        margin: 0 auto 1.5rem;
+        padding: 0;
+        div {
+          margin: 0 1.25rem 0 0;
+          width: 50px !important;
+          height: 50px !important;
+        }
       }
     }
-  }
-`
-
-const StyledRight = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  position: relative;
-  z-index: 5;
-  width: 40%;
-  margin: 0 0 0 auto !important;
-  @media (max-width: 767px) {
-    width: 100%;
-    padding-bottom: 2rem;
-  }
-`
-
-const StyledLeft = styled.div`
-  display: block;
-  min-height: 515px;
-  position: absolute;
-  align-items: flex-end;
-  z-index: 1;
-  width: 50%;
-  bottom: 50%;
-  left: 0px;
-  max-width: 1150px;
-  transform: translateY(50%);
-  div {
-    width: 100%;
-  }
-  img {
-    height: auto;
-  }
-  @media (min-width: 1921px) {
-    bottom: 50%;
-    transform: translateY(50%);
-  }
-  @media (max-width: 1399px) {
-    align-items: center;
-  }
-  @media (max-width: 1199px) {
-    width: 55%;
-  }
-  @media (max-width: 991px) {
-    width: 60%;
-  }
-  @media (max-width: 767px) {
-    width: 100%;
-    align-items: flex-start;
-    min-height: 450px;
-    max-height: 550px;
-    position: static;
-    transform: none;
-    img {
-      max-width: 550px;
-      margin: 0 auto;
-    }
-  }
-  @media (max-width: 575px) {
-    min-height: auto;
   }
 `
 
@@ -161,100 +111,89 @@ export default function Amenities() {
   return (
     <StyledAmenities>
       <div>
-        <StyledLeft>
-          <StaticImage
-            src="../../static/amenities.svg"
-            alt="Zdjęcie udogodnień"
-            placeholder={"tracedSVG"}
-            layout={"fullWidth"}
-            loading={"lazy"}
-          />
-        </StyledLeft>
-        <StyledRight>
-          <h2>Udogodnienia</h2>
-          <ul>
-            <li>
-              Wygodne fotele
-              <StaticImage
-                src="../../static/happy.svg"
-                alt="Ikona szczęścia"
-                placeholder={"tracedSVG"}
-                layout={"fixed"}
-                loading={"lazy"}
-                height={"24"}
-              />
-            </li>
-            <li>
-              Klimatyzacja
-              <StaticImage
-                src="../../static/air-conditioning.svg"
-                alt="Ikona klimatyzacji"
-                placeholder={"tracedSVG"}
-                layout={"fixed"}
-                loading={"lazy"}
-                height={"24"}
-              />
-            </li>
-            <li>
-              Wi-fi
-              <StaticImage
-                src="../../static/wifi.svg"
-                alt="Ikona wifi"
-                placeholder={"tracedSVG"}
-                layout={"fixed"}
-                loading={"lazy"}
-                height={"24"}
-              />
-            </li>
-            <li>
-              TV
-              <StaticImage
-                src="../../static/tv.svg"
-                alt="Ikona tv"
-                placeholder={"tracedSVG"}
-                layout={"fixed"}
-                loading={"lazy"}
-                height={"24"}
-              />
-            </li>
-            <li>
-              Gniazdka
-              <StaticImage
-                src="../../static/socket.svg"
-                alt="Ikona gniazdka"
-                placeholder={"tracedSVG"}
-                layout={"fixed"}
-                loading={"lazy"}
-                height={"24"}
-              />
-            </li>
-            <li>
-              Podstawki pod napoje
-              <StaticImage
-                src="../../static/drink.svg"
-                alt="Ikona napoju"
-                placeholder={"tracedSVG"}
-                layout={"fixed"}
-                loading={"lazy"}
-                height={"24"}
-              />
-            </li>
-            <li>
-              Przestrzeń bagażowa
-              <StaticImage
-                src="../../static/bag.svg"
-                alt="Ikona bagażu"
-                placeholder={"tracedSVG"}
-                layout={"fixed"}
-                loading={"lazy"}
-                height={"24"}
-              />
-            </li>
-          </ul>
-          <button className={"button"} onClick={() => scrollTo("#contact")}>
-            Skontaktuj się
-          </button>
-        </StyledRight>
+        <h2>Udogodnienia</h2>
+        <ul>
+          {/*  <li>
+            <StaticImage
+              src="../../static/happy.svg"
+              alt="Ikona szczęścia"
+              placeholder={"tracedSVG"}
+              layout={"fixed"}
+              loading={"lazy"}
+              height={"100"}
+            />
+            Wygodne fotele
+          </li> */}
+          <li>
+            <StaticImage
+              src="../../static/air-conditioning.svg"
+              alt="Ikona klimatyzacji"
+              placeholder={"tracedSVG"}
+              layout={"fixed"}
+              loading={"lazy"}
+              height={"100"}
+            />
+            Klimatyzacja
+          </li>
+          <li>
+            <StaticImage
+              src="../../static/wifi.svg"
+              alt="Ikona wifi"
+              placeholder={"tracedSVG"}
+              layout={"fixed"}
+              loading={"lazy"}
+              height={"100"}
+            />
+            Wi-fi
+          </li>
+          <li>
+            <StaticImage
+              src="../../static/tv.svg"
+              alt="Ikona tv"
+              placeholder={"tracedSVG"}
+              layout={"fixed"}
+              loading={"lazy"}
+              height={"100"}
+            />
+            TV
+          </li>
+          <li>
+            <StaticImage
+              src="../../static/socket.svg"
+              alt="Ikona gniazdka"
+              placeholder={"tracedSVG"}
+              layout={"fixed"}
+              loading={"lazy"}
+              height={"100"}
+            />
+            Gniazdka
+          </li>
+          <li>
+            <StaticImage
+              src="../../static/drink.svg"
+              alt="Ikona napoju"
+              placeholder={"tracedSVG"}
+              layout={"fixed"}
+              loading={"lazy"}
+              height={"100"}
+            />
+            Podstawki pod napoje
+          </li>
+          <li>
+            <StaticImage
+              src="../../static/bag.svg"
+              alt="Ikona bagażu"
+              placeholder={"tracedSVG"}
+              layout={"fixed"}
+              loading={"lazy"}
+              height={"100"}
+            />
+            Przestrzeń bagażowa
+          </li>
+        </ul>
+        <button className={"button"} onClick={() => scrollTo("#contact")}>
+          Skontaktuj się
+        </button>
       </div>
     </StyledAmenities>
   )

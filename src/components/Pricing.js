@@ -45,7 +45,7 @@ const StyledPricing = styled.div`
   }
   @media (max-width: 575px) {
     min-height: auto;
-    padding: 3rem 1rem 0;
+    padding: 1rem 1rem 0;
     ul {
       li {
         width: 100%;

@@ -55,6 +55,7 @@ export default function Home() {
         <Hero />
         <People />
         <Packages />
+        <Amenities />
         <Author />
         <Pricing />
         <Contact />

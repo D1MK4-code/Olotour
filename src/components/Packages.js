@@ -14,7 +14,6 @@ const StyledPackages = styled.div`
   padding: 0 2rem;
   position: relative;
   margin-bottom: 4rem;
-
   div {
     max-width: 1400px;
     margin: 0 auto;
@@ -54,7 +53,7 @@ const StyledPackages = styled.div`
   }
   @media (max-width: 575px) {
     min-height: auto;
-    padding: 3rem 1rem 0;
+    padding: 1rem 1rem 0;
   }
 `
 
