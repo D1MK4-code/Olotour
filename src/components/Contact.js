@@ -121,32 +121,6 @@ const RightWrapper = styled.div`
           border: 1px solid #353535;
         }
       }
-      input {
-        &::-webkit-datetime-edit,
-        &::-webkit-datetime-edit-fields-wrapper,
-        &::-webkit-datetime-edit-text,
-        &::-webkit-datetime-edit-month-field,
-        &::-webkit-datetime-edit-day-field,
-        &::-webkit-datetime-edit-year-field,
-        &::-webkit-inner-spin-button,
-        &[type="date"],
-        &::-webkit-calendar-picker-indicator {
-          color: #353535;
-          font-size: 1rem;
-          border-radius: 0.5rem;
-          border: 1px solid #9f9fb9;
-          outline: none;
-          margin-bottom: 2rem;
-          padding: 0.75rem;
-          transition: all 0.15s ease-in-out;
-          &:focus,
-          &:active,
-          &:focus-within,
-          &:hover {
-            border: 1px solid #353535;
-          }
-        }
-      }
       textarea {
         height: 150px;
       }
@@ -171,20 +145,6 @@ const RightWrapper = styled.div`
         textarea {
           padding: 0.75rem;
           margin-bottom: 1.5rem;
-        }
-        input {
-          &::-webkit-datetime-edit,
-          &::-webkit-datetime-edit-fields-wrapper,
-          &::-webkit-datetime-edit-text,
-          &::-webkit-datetime-edit-month-field,
-          &::-webkit-datetime-edit-day-field,
-          &::-webkit-datetime-edit-year-field,
-          &::-webkit-inner-spin-button,
-          &::-webkit-calendar-picker-indicator,
-          &[type="date"] {
-            padding: 0.75rem;
-            margin-bottom: 1.5rem;
-          }
         }
         textarea {
           height: 115px;
