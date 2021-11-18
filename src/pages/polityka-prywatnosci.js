@@ -32,6 +32,14 @@ const StyledPrivacy = styled.div`
     margin-top: 0.5rem;
   }
   @media (max-width: 767px) {
+    background: #494949;
+    h2,
+    p {
+      color: #fff;
+      a {
+        color: #edd6d6;
+      }
+    }
     > div {
       padding: 7rem 1rem;
     }

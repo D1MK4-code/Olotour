@@ -106,7 +106,7 @@ const RightWrapper = styled.div`
       }
       input,
       textarea {
-        color: #070879;
+        color: #353535;
         font-size: 1rem;
         border-radius: 0.5rem;
         border: 1px solid #9f9fb9;
@@ -296,6 +296,10 @@ export default function Contact() {
             <div>
               <label for="name">Imię:</label>
               <input type="text" id="name" name="name" />
+            </div>
+            <div>
+              <label for="date">Data wyjazdu:</label>
+              <input type="date" id="date" name="date" />
             </div>
             <div>
               <label for="number">Numer telefonu:</label>
