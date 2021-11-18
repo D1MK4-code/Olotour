@@ -63,7 +63,7 @@ const StyledHero = styled.div`
     > div {
       flex-direction: column;
       &:first-child {
-        padding-top: 8rem;
+        padding-top: 6rem;
       }
     }
     .gatsby-image-wrapper {

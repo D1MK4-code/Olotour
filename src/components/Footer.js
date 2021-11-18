@@ -128,7 +128,7 @@ export default function Footer() {
               loading={"eager"}
             />
           </Link>
-          <p>Copyright © 2021 OloTour</p>
+          <p>Copyright © 2021 Olotour Łukasz Motyka</p>
           <Link to="/polityka-prywatnosci">Polityka prywatności</Link>
         </div>
         <ul className="nav-links">

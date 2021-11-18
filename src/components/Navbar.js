@@ -170,6 +170,12 @@ export default function Navbar() {
             }s`
           }
         })
+        navLinks.forEach(link => {
+          link.addEventListener("click", event => {
+            nav.classList.remove("active")
+            burger.classList.remove("toggle")
+          })
+        })
         // Burger Animation
         burger.classList.toggle("toggle")
       })
@@ -193,12 +199,12 @@ export default function Navbar() {
 
         <ul className="nav-links">
           <li>
-            {/* <button onClick={() => scrollTo("#pricing")}>Cennik</button> */}
-            <button>Cennik</button>
+            <button onClick={() => scrollTo("#pricing")}>Cennik</button>
+            {/* <button>Cennik</button> */}
           </li>
           <li>
-            {/* <button onClick={() => scrollTo("#contact")}>Kontakt</button> */}
-            <button>Kontakt</button>
+            <button onClick={() => scrollTo("#contact")}>Kontakt</button>
+            {/* <button>Kontakt</button> */}
           </li>
           <li>
             <Link to="/galeria">Galeria</Link>
