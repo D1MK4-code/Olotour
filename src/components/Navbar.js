@@ -67,6 +67,13 @@ const StyledNavbar = styled.nav`
       }
     }
   }
+  @media (max-width: 991px) {
+    ul {
+      li {
+        margin-left: 3rem;
+      }
+    }
+  }
 
   @media (max-width: 767px) {
     padding: 1.5rem 1rem 0;
@@ -198,14 +205,12 @@ export default function Navbar() {
         </Link>
 
         <ul className="nav-links">
-          <li>
+          {/* <li>
             <button onClick={() => scrollTo("#pricing")}>Cennik</button>
-            {/* <button>Cennik</button> */}
           </li>
           <li>
             <button onClick={() => scrollTo("#contact")}>Kontakt</button>
-            {/* <button>Kontakt</button> */}
-          </li>
+          </li> */}
           <li>
             <Link to="/galeria">Galeria</Link>
           </li>

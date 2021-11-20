@@ -197,6 +197,11 @@ body {
     }
   }
 
+  .SRLCaptionText {
+    opacity: 0;
+    pointer-events: none;
+  }
+
   @media (max-width: 1399px) {
     h2 {
       font-size: 2rem;
