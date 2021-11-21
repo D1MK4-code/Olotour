@@ -66,12 +66,12 @@ const CardWrapper = styled.div`
 `
 
 const SingleCard = styled.div`
-  width: calc(33% - 20px);
+  width: calc(33.333% - 20px);
   margin: 0 30px 0 0;
   box-shadow: 0 0px 10px 2px #dedede;
   padding: 1.5rem;
   border-radius: 0.75rem;
-  &::last-child {
+  &:last-child {
     margin-right: 0;
   }
   span {
