@@ -28,7 +28,7 @@ const StyledNavbar = styled.nav`
     text-decoration: none;
     font-style: italic;
   }
-  ul {
+  .nav-links {
     list-style: none;
     display: flex;
     li {
@@ -68,7 +68,7 @@ const StyledNavbar = styled.nav`
     }
   }
   @media (max-width: 991px) {
-    ul {
+    .nav-links {
       li {
         margin-left: 3rem;
       }
@@ -83,7 +83,7 @@ const StyledNavbar = styled.nav`
     a {
       pointer-events: all;
     }
-    ul {
+    .nav-links {
       position: absolute;
       right: 0;
       height: 100vh;
@@ -123,6 +123,64 @@ const StyledNavbar = styled.nav`
     .gatsby-image-wrapper {
       width: 160px !important;
     }
+  }
+`
+
+const DirectContact = styled.div`
+  flex-direction: column;
+  max-width: 360px;
+  margin: 0 auto;
+  display: none;
+  ul {
+    margin-top: 1rem;
+    padding: 4rem 0 0 0 !important;
+    li {
+      margin-bottom: 1.5rem !important;
+      padding-left: 2.5rem;
+      position: relative;
+      a {
+        font-size: 1rem !important;
+        color: #9090a8;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          color: #f22e2e;
+        }
+      }
+      div {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  .gatsby-image-wrapper {
+    width: 1.5rem !important;
+    img {
+      object-fit: contain !important;
+    }
+  }
+  @media (max-width: 991px) {
+    ul {
+      padding-top: 0.5rem;
+    }
+  }
+  @media (max-width: 767px) {
+    display: flex;
+    margin-bottom: 3rem;
+  }
+  @media (max-width: 575px) {
+    max-width: 100%;
+    margin: 0 0 3rem;
+    /*   ul {
+      li {
+        a {
+          font-size: 1rem !important;
+        }
+      }
+    } */
   }
 `
 
@@ -217,6 +275,63 @@ export default function Navbar() {
           <li>
             <Link to="/faq">FAQ</Link>
           </li>
+          <DirectContact>
+            <ul>
+              <li>
+                {" "}
+                <StaticImage
+                  src="../../static/phone.svg"
+                  alt="Ikonka potwierdzenia"
+                  placeholder={"blurred"}
+                  layout={"fixed"}
+                  loading={"lazy"}
+                  height={"24"}
+                />
+                <a href="tel:697524834">+48 697 524 834</a>
+              </li>
+              <li>
+                {" "}
+                <StaticImage
+                  src="../../static/mail.svg"
+                  alt="Ikonka potwierdzenia"
+                  placeholder={"blurred"}
+                  layout={"fixed"}
+                  loading={"lazy"}
+                  height={"24"}
+                />
+                <a href="mailto:lukaszmotyka6@wp.pl">lukaszmotyka6@wp.pl</a>
+              </li>
+              <li>
+                <StaticImage
+                  src="../../static/facebook.svg"
+                  alt="Ikonka potwierdzenia"
+                  placeholder={"blurred"}
+                  layout={"fixed"}
+                  loading={"lazy"}
+                  height={"24"}
+                />
+                <a
+                  href="https://www.facebook.com/people/OloTour/100063745921043/"
+                  target="_blank"
+                >
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <StaticImage
+                  src="../../static/whatsapp.svg"
+                  alt="Ikonka potwierdzenia"
+                  placeholder={"blurred"}
+                  layout={"fixed"}
+                  loading={"lazy"}
+                  height={"24"}
+                />
+                <a href="https://wa.me/697524834" target="_blank">
+                  WhatsApp
+                </a>
+              </li>
+            </ul>
+          </DirectContact>
         </ul>
         <StyledBurger className="burger">
           <div></div>

@@ -169,9 +169,8 @@ export default function Author() {
           />
           <h3>Łukasz Motyka</h3>
           <p>
-            Założyciel firmy, doświadczony kierowca z wieloletnim
-            doświadczeniem. Stawia bezpieczeństwo i komfort wszystkich pasażerów
-            na pierwszym miejscu
+            Założyciel firmy, kierowca z wieloletnim doświadczeniem. Stawia
+            bezpieczeństwo i komfort wszystkich pasażerów na pierwszym miejscu.
           </p>
         </StyledContent>
       </div>
