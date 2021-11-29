@@ -1,10 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import GlobalStyles from "../styles/Global"
 import Layout from "../components/Layout"
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
-
+import { Data } from "../components/Data"
 const StyledFaq = styled.div`
   min-height: calc(100vh - 136px);
   > div {
@@ -34,12 +34,45 @@ const StyledFaq = styled.div`
   }
 `
 
+const Wrap = styled.div`
+  cursor: pointer;
+`
+
+const Dropdown = styled.div`
+  font-size: 1rem;
+`
+
 export default function Faq() {
+  const [clicked, setClicked] = useState(false)
+
+  const toggle = index => {
+    if (clicked === index) {
+      // if question is active - close it
+      return setClicked(null)
+    }
+    setClicked(index)
+  }
+
   return (
     <Layout>
       <StyledFaq>
         <div>
           <h2>FAQ</h2>
+          {Data.map((item, index) => {
+            return (
+              <>
+                <Wrap onClick={() => toggle(index)} key={index}>
+                  <h3>{item.question}</h3>
+                  <span>{clicked === index ? <img /> : <img />}</span>
+                </Wrap>
+                {clicked === index ? (
+                  <Dropdown>
+                    <p>{item.answer}</p>
+                  </Dropdown>
+                ) : null}
+              </>
+            )
+          })}
         </div>
       </StyledFaq>
     </Layout>
