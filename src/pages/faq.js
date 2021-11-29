@@ -11,15 +11,16 @@ const StyledFaq = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 1400px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 10rem 1rem;
+    padding: 10rem 2rem;
   }
   h2 {
     font-size: 2.25rem;
     margin-bottom: 2rem;
     text-align: center;
   }
+
   @media (max-width: 767px) {
     > div {
       padding: 7rem 1rem;
@@ -34,12 +35,53 @@ const StyledFaq = styled.div`
   }
 `
 
+const SingleItem = styled.div`
+  width: 100%;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 1.25rem 0;
+  @media (max-width: 767px) {
+    padding: 1rem 0;
+  }
+`
+
 const Wrap = styled.div`
   cursor: pointer;
+  position: relative;
+  h4 {
+    padding-right: 4rem;
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  span {
+    position: absolute;
+    right: 1rem;
+    top: 0;
+  }
+
+  @media (max-width: 767px) {
+    h4 {
+      font-size: 1.125rem;
+    }
+  }
 `
 
 const Dropdown = styled.div`
-  font-size: 1rem;
+  margin-top: 1rem;
+  p {
+    font-size: 1rem;
+    margin: 0;
+  }
+  @media (max-width: 767px) {
+    margin-top: 0.75rem;
+    p {
+      font-size: 0.875rem;
+    }
+  }
+`
+
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
 `
 
 export default function Faq() {
@@ -58,21 +100,43 @@ export default function Faq() {
       <StyledFaq>
         <div>
           <h2>FAQ</h2>
-          {Data.map((item, index) => {
-            return (
-              <>
-                <Wrap onClick={() => toggle(index)} key={index}>
-                  <h3>{item.question}</h3>
-                  <span>{clicked === index ? <img /> : <img />}</span>
-                </Wrap>
-                {clicked === index ? (
-                  <Dropdown>
-                    <p>{item.answer}</p>
-                  </Dropdown>
-                ) : null}
-              </>
-            )
-          })}
+          <Container>
+            {Data.map((item, index) => {
+              return (
+                <>
+                  <SingleItem>
+                    <Wrap onClick={() => toggle(index)} key={index}>
+                      <h4>{item.question}</h4>
+                      <span>
+                        {clicked === index ? (
+                          <StaticImage
+                            src="../../static/minus.svg"
+                            alt="Ikonka minus"
+                            placeholder={"tracedSVG"}
+                            layout={"fixed"}
+                            height={"24"}
+                          />
+                        ) : (
+                          <StaticImage
+                            src="../../static/plus.svg"
+                            alt="Ikonka plus"
+                            placeholder={"tracedSVG"}
+                            layout={"fixed"}
+                            height={"24"}
+                          />
+                        )}
+                      </span>
+                    </Wrap>
+                    {clicked === index ? (
+                      <Dropdown>
+                        <p>{item.answer}</p>
+                      </Dropdown>
+                    ) : null}
+                  </SingleItem>
+                </>
+              )
+            })}
+          </Container>
         </div>
       </StyledFaq>
     </Layout>
