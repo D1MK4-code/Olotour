@@ -155,7 +155,10 @@ export default function Home({ data }) {
             property="og:description"
             content="Międzynarodowe przejazdy busem na trasie Polska-Niemcy-Belgia-Holandia. Obsługujemy województwa: Małopolskie, Śląskie, Opolskie, Dolnośląskie, Podkarpackie."
           />
-          <meta property="og:image" content="/olotour-v2.png" />{" "}
+          <meta
+            property="og:image"
+            content="https://olotour.pl/olotour-v2.png"
+          />{" "}
           {/* <!-- Twitter --> */}
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:url" content="https://olotour.pl/" />
@@ -164,7 +167,10 @@ export default function Home({ data }) {
             property="twitter:description"
             content="Międzynarodowe przejazdy busem na trasie Polska-Niemcy-Belgia-Holandia. Obsługujemy województwa: Małopolskie, Śląskie, Opolskie, Dolnośląskie, Podkarpackie."
           />
-          <meta property="twitter:image" content="/olotour-v2.png" />
+          <meta
+            property="twitter:image"
+            content="https://olotour.pl/olotour-v2.png"
+          />
         </Helmet>
         <Hero />
         <People />
