@@ -5,7 +5,16 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: "Olotour - przewozy za granicę",
+    description:
+      "Międzynarodowe przejazdy busem na trasie Polska-Niemcy-Belgia-Holandia. Obsługujemy województwa: Małopolskie, Śląskie, Opolskie, Dolnośląskie, Podkarpackie",
+    url: "https://olotour.pl/",
+    image: "/olotour-v2.png",
+  },
   plugins: [
+    `gatsby-plugin-react-helmet`,
+
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

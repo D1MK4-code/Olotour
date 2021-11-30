@@ -5,6 +5,7 @@ import Layout from "../components/Layout"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Link, graphql } from "gatsby"
 import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox"
+import { Helmet } from "react-helmet"
 
 const StyledGallery = styled.div`
   min-height: calc(100vh - 136px);
@@ -83,6 +84,7 @@ export default function Galeria({ data }) {
   return (
     <Layout>
       <StyledGallery>
+        <Helmet title="Galeria" defer={false} />
         <SimpleReactLightbox>
           <SRLWrapper>
             <Wrapper>

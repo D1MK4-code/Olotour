@@ -13,6 +13,7 @@ import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import { Link, graphql } from "gatsby"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Carousel } from "react-bootstrap"
+import { Helmet } from "react-helmet"
 
 const StyledContainer = styled.section`
   width: 100%;
@@ -138,6 +139,33 @@ export default function Home({ data }) {
   return (
     <Layout>
       <StyledContainer>
+        <Helmet>
+          {/* <!-- Primary Meta Tags --> */}
+          <title>Olotour</title>
+          <meta name="title" content="Za granicę jedź z nami" />
+          <meta
+            name="description"
+            content="Międzynarodowe przejazdy busem na trasie Polska-Niemcy-Belgia-Holandia. Obsługujemy województwa: Małopolskie, Śląskie, Opolskie, Dolnośląskie, Podkarpackie."
+          />{" "}
+          {/* <!-- Open Graph / Facebook --> */}
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://olotour.pl/" />
+          <meta property="og:title" content="Za granicę jedź z nami" />
+          <meta
+            property="og:description"
+            content="Międzynarodowe przejazdy busem na trasie Polska-Niemcy-Belgia-Holandia. Obsługujemy województwa: Małopolskie, Śląskie, Opolskie, Dolnośląskie, Podkarpackie."
+          />
+          <meta property="og:image" content="/olotour-v2.png" />{" "}
+          {/* <!-- Twitter --> */}
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content="https://olotour.pl/" />
+          <meta property="twitter:title" content="Za granicę jedź z nami" />
+          <meta
+            property="twitter:description"
+            content="Międzynarodowe przejazdy busem na trasie Polska-Niemcy-Belgia-Holandia. Obsługujemy województwa: Małopolskie, Śląskie, Opolskie, Dolnośląskie, Podkarpackie."
+          />
+          <meta property="twitter:image" content="/olotour-v2.png" />
+        </Helmet>
         <Hero />
         <People />
         <Packages />

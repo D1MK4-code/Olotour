@@ -5,6 +5,8 @@ import Layout from "../components/Layout"
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import { Data } from "../components/Data"
+import { Helmet } from "react-helmet"
+
 const StyledFaq = styled.div`
   min-height: calc(100vh - 136px);
   > div {
@@ -98,6 +100,7 @@ export default function Faq() {
   return (
     <Layout>
       <StyledFaq>
+        <Helmet title="FAQ" defer={false} />
         <div>
           <h2>FAQ</h2>
           <Container>
