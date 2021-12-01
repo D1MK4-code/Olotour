@@ -1,8 +1,10 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
 import GlobalStyles from "../styles/Global"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import { StaticImage } from "gatsby-plugin-image"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const StyledPackages = styled.div`
   display: flex;
@@ -105,10 +107,39 @@ const StyledRight = styled.div`
 `
 
 export default function Packages() {
+  useEffect(() => {
+    if (window.innerWidth > 767) {
+      gsap.from("#packagesImage", {
+        y: -400,
+        duration: 0.8,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#packagesImage",
+          start: "top 10%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#packagesRight", {
+        y: 400,
+        duration: 0.8,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#packagesRight",
+          start: "top 100%",
+          end: "bottom 80%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+    }
+  })
+
   return (
     <StyledPackages>
       <div>
-        <StyledLeft>
+        <StyledLeft id="packagesImage">
           <h2>Przewozy paczek</h2>
           <p>
             Na trasie naszego przejazdu świadczymy usługę przewozu paczek oraz
@@ -130,7 +161,7 @@ export default function Packages() {
             Cennik
           </button>
         </StyledLeft>
-        <StyledRight>
+        <StyledRight id="packagesRight">
           <StaticImage
             src="../../static/paczki.jpeg"
             alt="Zdjęcie transportu paczek"

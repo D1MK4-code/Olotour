@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
 import GlobalStyles from "../styles/Global"
 import scrollTo from "gatsby-plugin-smoothscroll"
-
 import { StaticImage } from "gatsby-plugin-image"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const StyledAmenities = styled.div`
   width: 100%;
@@ -17,9 +18,13 @@ const StyledAmenities = styled.div`
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
   }
   > div {
     width: 100%;
+  }
+  button {
+    margin-bottom: 5px;
   }
   h2 {
     line-height: 1.2em;
@@ -108,11 +113,92 @@ const StyledAmenities = styled.div`
 `
 
 export default function Amenities() {
+  useEffect(() => {
+    if (window.innerWidth > 767) {
+      gsap.from("#amenitiesTitle", {
+        y: -200,
+        duration: 0.8,
+        autoAlpha: 0,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: "#amenitiesTitle",
+          start: "top 40%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#amenities li", {
+        opacity: 0,
+        stagger: 0.2,
+        y: 300,
+        duration: 1,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: "#amenities",
+          start: "top 40%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+    }
+    /* else {
+      gsap.from("#partnershipTitle", {
+        y: -200,
+        duration: 0.8,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#partnershipTitle",
+          start: "top 40%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      });
+      gsap.from("#firstCard", {
+        y: 350,
+        duration: 0.7,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#firstCard",
+          start: "top 90%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      });
+      gsap.from("#secondCard", {
+        y: 350,
+        duration: 0.7,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#secondCard",
+          start: "top 90%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      });
+      gsap.from("#thirdCard", {
+        y: 350,
+        duration: 0.7,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#thirdCard",
+          start: "top 90%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      });
+    } */
+  })
   return (
     <StyledAmenities>
       <div>
-        <h2>Udogodnienia</h2>
-        <ul>
+        <h2 id="amenitiesTitle">Udogodnienia</h2>
+        <ul id="amenities">
           {/*  <li>
             <StaticImage
               src="../../static/happy.svg"
@@ -191,7 +277,11 @@ export default function Amenities() {
             Przestrzeń bagażowa
           </li>
         </ul>
-        <button className={"button"} onClick={() => scrollTo("#contact")}>
+        <button
+          id="amenitiesButton"
+          className={"button"}
+          onClick={() => scrollTo("#contact")}
+        >
           Skontaktuj się
         </button>
       </div>

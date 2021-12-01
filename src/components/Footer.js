@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import React, { useEffect } from "react"
+import React, { useRef, useEffect } from "react"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"

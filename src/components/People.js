@@ -1,9 +1,12 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
 import GlobalStyles from "../styles/Global"
 import scrollTo from "gatsby-plugin-smoothscroll"
-
 import { StaticImage } from "gatsby-plugin-image"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const StyledPeople = styled.div`
   display: flex;
@@ -107,10 +110,39 @@ const StyledLeft = styled.div`
 `
 
 export default function People() {
+  useEffect(() => {
+    if (window.innerWidth > 767) {
+      gsap.from("#peopleImage", {
+        y: 400,
+        duration: 0.8,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#peopleImage",
+          start: "top 100%",
+          end: "bottom 80%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#styledRight", {
+        y: -400,
+        duration: 0.8,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#styledRight",
+          start: "top 10%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+    }
+  })
+
   return (
     <StyledPeople id="people">
       <div>
-        <StyledLeft>
+        <StyledLeft id="peopleImage">
           <StaticImage
             src="../../static/bus2.jpeg"
             alt="Zdjęcie transportu pasażerów"
@@ -119,7 +151,7 @@ export default function People() {
             loading={"lazy"}
           />
         </StyledLeft>
-        <StyledRight>
+        <StyledRight id="styledRight">
           <h2>Przewozy międzynarodowe</h2>
           <p>
             <strong> OloTour </strong>świadczy kompleksowe usługi przewozu za

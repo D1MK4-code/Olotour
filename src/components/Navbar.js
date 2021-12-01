@@ -1,8 +1,10 @@
 import { Link } from "gatsby"
-import React, { useEffect } from "react"
+import React, { useRef, useEffect } from "react"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const StyledNavbar = styled.nav`
   background: transparent;
@@ -245,13 +247,29 @@ export default function Navbar() {
         burger.classList.toggle("toggle")
       })
     }
-
     navSlide()
+
+    if (window.innerWidth > 767) {
+      gsap.from("#navLogo", {
+        x: 200,
+        duration: 0.6,
+        autoAlpha: 0,
+        opacity: 0,
+        delay: 0.5,
+      })
+      gsap.from(".nav-links", {
+        x: -200,
+        duration: 0.8,
+        autoAlpha: 0,
+        opacity: 0,
+        delay: 0.5,
+      })
+    }
   })
   return (
     <StyledNavbar>
       <div>
-        <Link to="/">
+        <Link to="/" id="navLogo">
           <StaticImage
             src="../../static/olotour-v2.png"
             alt="Główne zdjęcie"

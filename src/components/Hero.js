@@ -1,8 +1,10 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
 import GlobalStyles from "../styles/Global"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import { StaticImage } from "gatsby-plugin-image"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const StyledHero = styled.div`
   min-height: 100vh;
@@ -121,6 +123,7 @@ const StyledLeft = styled.div`
   position: relative;
   z-index: 5;
   width: 40%;
+  visibility: hidden;
   margin: 0 auto 0 0 !important;
   @media (max-width: 1199px) {
     width: 50%;
@@ -135,6 +138,17 @@ const StyledLeft = styled.div`
 `
 
 export default function Hero() {
+  useEffect(() => {
+    if (window.innerWidth > 767) {
+      gsap.from("#textWrapper", {
+        x: -300,
+        duration: 0.8,
+        autoAlpha: 0,
+        opacity: 0,
+        delay: 0.5,
+      })
+    }
+  })
   return (
     <StyledHero>
       <div>
@@ -145,7 +159,7 @@ export default function Hero() {
           layout={"fullWidth"}
           loading={"eager"}
         />
-        <StyledLeft>
+        <StyledLeft id="textWrapper">
           <h1>
             Za granicę <br />
             jedź z nami!

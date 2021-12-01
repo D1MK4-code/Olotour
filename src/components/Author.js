@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
 import GlobalStyles from "../styles/Global"
 import scrollTo from "gatsby-plugin-smoothscroll"
-
 import { StaticImage } from "gatsby-plugin-image"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const StyledAuthor = styled.div`
   display: flex;
@@ -124,6 +125,7 @@ const StyledContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  visibility: hidden;
   .gatsby-image-wrapper {
     position: relative !important;
     width: 100px !important;
@@ -147,6 +149,23 @@ const StyledContent = styled.div`
 `
 
 export default function Author() {
+  useEffect(() => {
+    if (window.innerWidth > 767) {
+      gsap.from("#authorContent", {
+        y: 250,
+        duration: 0.8,
+        autoAlpha: 0,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: "#authorContent",
+          start: "top 90%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+    }
+  })
   return (
     <StyledAuthor>
       <div>
@@ -157,7 +176,7 @@ export default function Author() {
           layout={"fullWidth"}
           loading={"lazy"}
         />
-        <StyledContent>
+        <StyledContent id="authorContent">
           <StaticImage
             src="../../static/lukasz.jpg"
             alt="Główne zdjęcie"

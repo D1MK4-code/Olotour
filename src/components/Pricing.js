@@ -1,7 +1,9 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
 import GlobalStyles from "../styles/Global"
 import { StaticImage } from "gatsby-plugin-image"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const StyledPricing = styled.div`
   display: flex;
@@ -132,12 +134,66 @@ const SingleCard = styled.div`
 `
 
 export default function Pricing() {
+  useEffect(() => {
+    if (window.innerWidth > 991) {
+      gsap.from("#pricingTitle", {
+        y: -200,
+        duration: 0.8,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#pricingTitle",
+          start: "top 40%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#firstCard", {
+        y: 400,
+        duration: 0.8,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#firstCard",
+          start: "top 120%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#secondCard", {
+        y: 400,
+        duration: 0.8,
+        autoAlpha: 0,
+        delay: 0.3,
+        scrollTrigger: {
+          trigger: "#secondCard",
+          start: "top 120%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#thirdCard", {
+        y: 400,
+        duration: 0.8,
+        autoAlpha: 0,
+        delay: 0.6,
+        scrollTrigger: {
+          trigger: "#thirdCard",
+          start: "top 120%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+    }
+  })
   return (
     <StyledPricing id="pricing">
       <div>
-        <h2>Cennik</h2>
+        <h2 id="pricingTitle">Cennik</h2>
         <CardWrapper>
-          <SingleCard>
+          <SingleCard id="firstCard">
             <h5>Przejazd jednorazowy</h5>
             <span>400zł / 90€</span>
             <p>Powyższa cena dotyczy jednorazowego przejazdu.</p>
@@ -216,7 +272,7 @@ export default function Pricing() {
               </li>
             </ul>
           </SingleCard>
-          <SingleCard>
+          <SingleCard id="secondCard">
             <h5>Karta stałego klienta</h5>
             <span>-50%</span>
             <p>Co 6-ty przejazd kosztuje -50% ceny jednorazowego przejazdu</p>
@@ -295,7 +351,7 @@ export default function Pricing() {
               </li>
             </ul>
           </SingleCard>
-          <SingleCard>
+          <SingleCard id="thirdCard">
             <h5>Przewóz paczek i przesyłek</h5>
             <span>150zł / 35€</span>
             <p>Ceny większych paczek są ustalane indywidualnie</p>

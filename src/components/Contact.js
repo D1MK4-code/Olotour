@@ -1,7 +1,9 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
 import GlobalStyles from "../styles/Global"
 import { StaticImage } from "gatsby-plugin-image"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const StyledContact = styled.div`
   display: flex;
@@ -18,9 +20,13 @@ const StyledContact = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
   > div {
     width: 100%;
+  }
+  .button {
+    margin-bottom: 5px;
   }
   h2 {
     line-height: 1.2em;
@@ -214,18 +220,60 @@ const DirectContact = styled.div`
 `
 
 export default function Contact() {
+  useEffect(() => {
+    if (window.innerWidth > 991) {
+      gsap.from("#leftContact", {
+        y: 300,
+        duration: 0.8,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#leftContact",
+          start: "top 20%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#leftContactImage", {
+        y: 300,
+        duration: 0.8,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#leftContactImage",
+          start: "top 20%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#rightContact", {
+        y: 400,
+        duration: 0.8,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#rightContact",
+          start: "top 20%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+    }
+  })
   return (
     <StyledContact id="contact">
       <div>
         <LeftWrapper>
-          <StaticImage
-            src="../../static/contact.svg"
-            alt="Zdjęcie kontaktu"
-            placeholder={"tracedSVG"}
-            layout={"fullWidth"}
-            loading={"lazy"}
-          />
-          <DirectContact>
+          <div id="leftContactImage">
+            <StaticImage
+              src="../../static/contact.svg"
+              alt="Zdjęcie kontaktu"
+              placeholder={"tracedSVG"}
+              layout={"fullWidth"}
+              loading={"lazy"}
+            />
+          </div>
+          <DirectContact id="leftContact">
             <h6>Skontaktuj się bezpośrednio</h6>
             <ul>
               <li>
@@ -284,7 +332,7 @@ export default function Contact() {
             </ul>
           </DirectContact>
         </LeftWrapper>
-        <RightWrapper>
+        <RightWrapper id="rightContact">
           <h2>Kontakt</h2>
           <form
             method="post"

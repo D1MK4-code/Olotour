@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import Layout from "../components/Layout"
 import Hero from "../components/Hero"
 import People from "../components/People"
@@ -14,6 +14,8 @@ import { Link, graphql } from "gatsby"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Carousel } from "react-bootstrap"
 import { Helmet } from "react-helmet"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const StyledContainer = styled.section`
   width: 100%;
@@ -136,6 +138,34 @@ const InsideWrapper = styled.div`
 `
 
 export default function Home({ data }) {
+  useEffect(() => {
+    if (window.innerWidth > 991) {
+      gsap.from("#carouselHeading", {
+        y: -200,
+        duration: 0.8,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#carouselHeading",
+          start: "top 40%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#carouselWrapper", {
+        y: 400,
+        duration: 0.8,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#carouselWrapper",
+          start: "top 90%",
+          end: "bottom 70%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+    }
+  })
   return (
     <Layout>
       <StyledContainer>
@@ -180,8 +210,8 @@ export default function Home({ data }) {
         <Pricing />
         <OutsideWrapper>
           <InsideWrapper>
-            <h2>Podróżuj komfortowo</h2>
-            <Carousel>
+            <h2 id="carouselHeading">Podróżuj komfortowo</h2>
+            <Carousel id="carouselWrapper">
               {data.gallery.edges.map(({ node }) => (
                 <Carousel.Item key={node.id}>
                   <GatsbyImage
@@ -193,7 +223,6 @@ export default function Home({ data }) {
             </Carousel>
           </InsideWrapper>
         </OutsideWrapper>
-
         <Contact />
       </StyledContainer>
     </Layout>
