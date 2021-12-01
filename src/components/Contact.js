@@ -223,7 +223,7 @@ export default function Contact() {
   useEffect(() => {
     if (window.innerWidth > 991) {
       gsap.from("#leftContact", {
-        y: 300,
+        y: -300,
         duration: 0.8,
         autoAlpha: 0,
         scrollTrigger: {
@@ -236,7 +236,7 @@ export default function Contact() {
         },
       })
       gsap.from("#leftContactImage", {
-        y: 300,
+        y: -300,
         duration: 0.8,
         autoAlpha: 0,
         scrollTrigger: {
@@ -248,7 +248,7 @@ export default function Contact() {
         },
       })
       gsap.from("#rightContact", {
-        y: 400,
+        y: -400,
         duration: 0.8,
         autoAlpha: 0,
         scrollTrigger: {
