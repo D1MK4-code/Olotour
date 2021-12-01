@@ -69,6 +69,12 @@ const StyledNavbar = styled.nav`
       }
     }
   }
+  @media (min-width: 768px) {
+    #navLogo,
+    .nav-links {
+      visibility: hidden;
+    }
+  }
   @media (max-width: 991px) {
     .nav-links {
       li {
