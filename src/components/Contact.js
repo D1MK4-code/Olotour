@@ -228,11 +228,10 @@ export default function Contact() {
         autoAlpha: 0,
         scrollTrigger: {
           trigger: "#leftContact",
-          start: "top 20%",
+          start: "top 50%",
           end: "bottom 50%",
           ease: "Power2.easeInOut",
           autoAlpha: 1,
-          markers: true,
         },
       })
       gsap.from("#leftContactImage", {
