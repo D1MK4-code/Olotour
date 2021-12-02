@@ -135,7 +135,7 @@ const SingleCard = styled.div`
 
 export default function Pricing() {
   useEffect(() => {
-    if (window.innerWidth > 991) {
+    if (window.innerWidth > 767) {
       gsap.from("#pricingTitle", {
         y: -200,
         duration: 0.8,

@@ -139,30 +139,57 @@ const InsideWrapper = styled.div`
 
 export default function Home({ data }) {
   useEffect(() => {
-    gsap.from("#carouselHeading", {
-      y: -200,
-      duration: 0.8,
-      autoAlpha: 0,
-      scrollTrigger: {
-        trigger: "#carouselHeading",
-        start: "top 40%",
-        end: "bottom 50%",
-        ease: "Power2.easeInOut",
-        autoAlpha: 1,
-      },
-    })
-    gsap.from("#carouselWrapper", {
-      y: 400,
-      duration: 0.8,
-      autoAlpha: 0,
-      scrollTrigger: {
-        trigger: "#carouselWrapper",
-        start: "top 90%",
-        end: "bottom 70%",
-        ease: "Power2.easeInOut",
-        autoAlpha: 1,
-      },
-    })
+    if (window.innerWidth > 767) {
+      gsap.from("#carouselHeading", {
+        y: -200,
+        duration: 0.8,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#carouselHeading",
+          start: "top 40%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#carouselWrapper", {
+        y: 400,
+        duration: 0.8,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#carouselWrapper",
+          start: "top 90%",
+          end: "bottom 70%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+    } else {
+      gsap.from("#carouselHeading", {
+        y: -150,
+        duration: 0.5,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#carouselHeading",
+          start: "top 40%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#carouselWrapper", {
+        y: 300,
+        duration: 0.6,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#carouselWrapper",
+          start: "top 90%",
+          end: "bottom 70%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+    }
   })
   return (
     <Layout>

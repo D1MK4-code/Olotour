@@ -153,7 +153,7 @@ export default function Hero() {
         duration: 0.5,
         autoAlpha: 0,
         opacity: 0,
-        delay: 0.4,
+        delay: 0.2,
       })
     }
   })

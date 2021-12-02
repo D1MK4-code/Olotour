@@ -283,14 +283,14 @@ export default function Navbar() {
         duration: 0.5,
         autoAlpha: 0,
         opacity: 0,
-        delay: 0.4,
+        delay: 0.2,
       })
       gsap.from(".burger", {
         x: -100,
         duration: 0.5,
         autoAlpha: 0,
         opacity: 0,
-        delay: 0.4,
+        delay: 0.2,
       })
     }
   })

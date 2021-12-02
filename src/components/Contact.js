@@ -260,12 +260,12 @@ export default function Contact() {
       })
     } else {
       gsap.from("#rightContact", {
-        y: 400,
-        duration: 0.8,
+        y: 300,
+        duration: 0.6,
         autoAlpha: 0,
         scrollTrigger: {
           trigger: "#rightContact",
-          start: "top 80%",
+          start: "top 125%",
           end: "bottom 50%",
           ease: "Power2.easeInOut",
           autoAlpha: 1,
@@ -273,11 +273,11 @@ export default function Contact() {
       })
       gsap.from("#leftContact", {
         y: 300,
-        duration: 0.8,
+        duration: 0.6,
         autoAlpha: 0,
         scrollTrigger: {
           trigger: "#leftContact",
-          start: "top 80%",
+          start: "top 125%",
           end: "bottom 50%",
           ease: "Power2.easeInOut",
           autoAlpha: 1,
@@ -285,11 +285,11 @@ export default function Contact() {
       })
       gsap.from("#leftContactImage", {
         y: 300,
-        duration: 0.8,
+        duration: 0.6,
         autoAlpha: 0,
         scrollTrigger: {
           trigger: "#leftContactImage",
-          start: "top 80%",
+          start: "top 125%",
           end: "bottom 50%",
           ease: "Power2.easeInOut",
           autoAlpha: 1,

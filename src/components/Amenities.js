@@ -114,33 +114,63 @@ const StyledAmenities = styled.div`
 
 export default function Amenities() {
   useEffect(() => {
-    gsap.from("#amenitiesTitle", {
-      y: -200,
-      duration: 0.8,
-      autoAlpha: 0,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: "#amenitiesTitle",
-        start: "top 40%",
-        end: "bottom 50%",
-        ease: "Power2.easeInOut",
-        autoAlpha: 1,
-      },
-    })
-    gsap.from("#amenities li", {
-      opacity: 0,
-      stagger: 0.2,
-      y: 300,
-      duration: 1,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: "#amenities",
-        start: "top 40%",
-        end: "bottom 50%",
-        ease: "Power2.easeInOut",
-        autoAlpha: 1,
-      },
-    })
+    if (window.innerWidth > 767) {
+      gsap.from("#amenitiesTitle", {
+        y: -200,
+        duration: 0.8,
+        autoAlpha: 0,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: "#amenitiesTitle",
+          start: "top 40%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#amenities li", {
+        opacity: 0,
+        stagger: 0.2,
+        y: 300,
+        duration: 1,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: "#amenities",
+          start: "top 40%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+    } else {
+      gsap.from("#amenitiesTitle", {
+        y: -200,
+        duration: 0.6,
+        autoAlpha: 0,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: "#amenitiesTitle",
+          start: "top 40%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#amenities li", {
+        opacity: 0,
+        stagger: 0.1,
+        y: 200,
+        duration: 0.6,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: "#amenities",
+          start: "top 40%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+    }
   })
   return (
     <StyledAmenities>
