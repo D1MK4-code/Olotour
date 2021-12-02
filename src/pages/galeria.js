@@ -84,22 +84,34 @@ const SingleImage = styled.div`
 
 export default function Galeria({ data }) {
   useEffect(() => {
-    gsap.from("#singleGallery div", {
-      opacity: 0,
-      stagger: 0.05,
-      y: 100,
-      duration: 0.6,
-      delay: 0.5,
-      autoAlpha: 0,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: "#singleGallery",
-        start: "top 40%",
-        end: "bottom 50%",
-        ease: "Power2.easeInOut",
-        autoAlpha: 1,
-      },
-    })
+    if (window.innerWidth > 767) {
+      gsap.from("#singleGallery div", {
+        opacity: 0,
+        stagger: 0.05,
+        y: 100,
+        duration: 0.6,
+        delay: 0.5,
+        autoAlpha: 0,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: "#singleGallery",
+          start: "top 40%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+    } else {
+      gsap.from("#singleGallery div", {
+        opacity: 0,
+        stagger: 0.05,
+        y: 100,
+        duration: 0.6,
+        delay: 0.5,
+        autoAlpha: 0,
+        ease: "power4.out",
+      })
+    }
   })
 
   return (
