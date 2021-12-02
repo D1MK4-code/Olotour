@@ -86,7 +86,6 @@ const Dropdown = styled.div`
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  visibility: hidden;
 `
 
 export default function Faq() {
@@ -101,35 +100,53 @@ export default function Faq() {
   }
 
   useEffect(() => {
-    gsap.from("#faqTitle", {
-      y: -200,
-      duration: 0.6,
-      autoAlpha: 0,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: "#faqTitle",
-        start: "top 40%",
-        end: "bottom 50%",
-        ease: "Power2.easeInOut",
-        autoAlpha: 1,
-      },
-    })
-    gsap.from("#faqContainer div", {
-      opacity: 0,
-      stagger: 0.05,
-      y: 100,
-      duration: 0.6,
-      delay: 0.5,
-      autoAlpha: 0,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: "#faqContainer",
-        start: "top 40%",
-        end: "bottom 50%",
-        ease: "Power2.easeInOut",
-        autoAlpha: 1,
-      },
-    })
+    if (window.innerWidth > 767) {
+      gsap.from("#faqTitle", {
+        y: -200,
+        duration: 0.6,
+        autoAlpha: 0,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: "#faqTitle",
+          start: "top 40%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#faqContainer div", {
+        opacity: 0,
+        stagger: 0.05,
+        y: 100,
+        duration: 0.6,
+        delay: 0.5,
+        autoAlpha: 0,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: "#faqContainer",
+          start: "top 40%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+    } else {
+      gsap.from("#faqTitle", {
+        y: -200,
+        duration: 0.6,
+        autoAlpha: 0,
+        opacity: 0,
+      })
+      gsap.from("#faqContainer div", {
+        opacity: 0,
+        stagger: 0.05,
+        y: 100,
+        duration: 0.6,
+        delay: 0.5,
+        autoAlpha: 0,
+        ease: "power4.out",
+      })
+    }
   })
 
   return (
