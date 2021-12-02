@@ -150,7 +150,7 @@ export default function Amenities() {
         opacity: 0,
         scrollTrigger: {
           trigger: "#amenitiesTitle",
-          start: "top 40%",
+          start: "top 80%",
           end: "bottom 50%",
           ease: "Power2.easeInOut",
           autoAlpha: 1,
@@ -164,7 +164,7 @@ export default function Amenities() {
         ease: "power4.out",
         scrollTrigger: {
           trigger: "#amenities",
-          start: "top 40%",
+          start: "top 80%",
           end: "bottom 50%",
           ease: "Power2.easeInOut",
           autoAlpha: 1,

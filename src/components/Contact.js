@@ -265,7 +265,7 @@ export default function Contact() {
         autoAlpha: 0,
         scrollTrigger: {
           trigger: "#rightContact",
-          start: "top 125%",
+          start: "top 150%",
           end: "bottom 50%",
           ease: "Power2.easeInOut",
           autoAlpha: 1,
@@ -277,7 +277,7 @@ export default function Contact() {
         autoAlpha: 0,
         scrollTrigger: {
           trigger: "#leftContact",
-          start: "top 125%",
+          start: "top 150%",
           end: "bottom 50%",
           ease: "Power2.easeInOut",
           autoAlpha: 1,
@@ -289,7 +289,7 @@ export default function Contact() {
         autoAlpha: 0,
         scrollTrigger: {
           trigger: "#leftContactImage",
-          start: "top 125%",
+          start: "top 150%",
           end: "bottom 50%",
           ease: "Power2.easeInOut",
           autoAlpha: 1,

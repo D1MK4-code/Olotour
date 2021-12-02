@@ -171,7 +171,7 @@ export default function Home({ data }) {
         autoAlpha: 0,
         scrollTrigger: {
           trigger: "#carouselHeading",
-          start: "top 40%",
+          start: "top 120%",
           end: "bottom 50%",
           ease: "Power2.easeInOut",
           autoAlpha: 1,
@@ -183,7 +183,7 @@ export default function Home({ data }) {
         autoAlpha: 0,
         scrollTrigger: {
           trigger: "#carouselWrapper",
-          start: "top 90%",
+          start: "top 120%",
           end: "bottom 70%",
           ease: "Power2.easeInOut",
           autoAlpha: 1,
