@@ -221,7 +221,7 @@ const DirectContact = styled.div`
 
 export default function Contact() {
   useEffect(() => {
-    if (window.innerWidth > 991) {
+    if (window.innerWidth > 767) {
       gsap.from("#leftContact", {
         y: -300,
         duration: 0.8,
@@ -253,6 +253,44 @@ export default function Contact() {
         scrollTrigger: {
           trigger: "#rightContact",
           start: "top 20%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+    } else {
+      gsap.from("#rightContact", {
+        y: 400,
+        duration: 0.8,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#rightContact",
+          start: "top 80%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#leftContact", {
+        y: 300,
+        duration: 0.8,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#leftContact",
+          start: "top 80%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+          markers: true,
+        },
+      })
+      gsap.from("#leftContactImage", {
+        y: 300,
+        duration: 0.8,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#leftContactImage",
+          start: "top 80%",
           end: "bottom 50%",
           ease: "Power2.easeInOut",
           autoAlpha: 1,

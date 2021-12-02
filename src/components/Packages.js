@@ -133,6 +133,31 @@ export default function Packages() {
           autoAlpha: 1,
         },
       })
+    } else {
+      gsap.from("#packagesImage", {
+        y: 400,
+        duration: 0.6,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#packagesImage",
+          start: "top 120%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#packagesRight", {
+        y: 400,
+        duration: 0.6,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#packagesRight",
+          start: "top 120%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
     }
   })
 

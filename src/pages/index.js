@@ -139,32 +139,30 @@ const InsideWrapper = styled.div`
 
 export default function Home({ data }) {
   useEffect(() => {
-    if (window.innerWidth > 991) {
-      gsap.from("#carouselHeading", {
-        y: -200,
-        duration: 0.8,
-        autoAlpha: 0,
-        scrollTrigger: {
-          trigger: "#carouselHeading",
-          start: "top 40%",
-          end: "bottom 50%",
-          ease: "Power2.easeInOut",
-          autoAlpha: 1,
-        },
-      })
-      gsap.from("#carouselWrapper", {
-        y: 400,
-        duration: 0.8,
-        autoAlpha: 0,
-        scrollTrigger: {
-          trigger: "#carouselWrapper",
-          start: "top 90%",
-          end: "bottom 70%",
-          ease: "Power2.easeInOut",
-          autoAlpha: 1,
-        },
-      })
-    }
+    gsap.from("#carouselHeading", {
+      y: -200,
+      duration: 0.8,
+      autoAlpha: 0,
+      scrollTrigger: {
+        trigger: "#carouselHeading",
+        start: "top 40%",
+        end: "bottom 50%",
+        ease: "Power2.easeInOut",
+        autoAlpha: 1,
+      },
+    })
+    gsap.from("#carouselWrapper", {
+      y: 400,
+      duration: 0.8,
+      autoAlpha: 0,
+      scrollTrigger: {
+        trigger: "#carouselWrapper",
+        start: "top 90%",
+        end: "bottom 70%",
+        ease: "Power2.easeInOut",
+        autoAlpha: 1,
+      },
+    })
   })
   return (
     <Layout>

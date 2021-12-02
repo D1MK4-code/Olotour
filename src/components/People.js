@@ -136,6 +136,31 @@ export default function People() {
           autoAlpha: 1,
         },
       })
+    } else {
+      gsap.from("#peopleImage", {
+        y: 400,
+        duration: 0.6,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#peopleImage",
+          start: "top 120%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#styledRight", {
+        y: 400,
+        duration: 0.6,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#styledRight",
+          start: "top 120%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
     }
   })
 

@@ -186,6 +186,55 @@ export default function Pricing() {
           autoAlpha: 1,
         },
       })
+    } else {
+      gsap.from("#pricingTitle", {
+        y: -200,
+        duration: 0.6,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#pricingTitle",
+          start: "top 40%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#firstCard", {
+        y: 400,
+        duration: 0.6,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#firstCard",
+          start: "top 120%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#secondCard", {
+        y: 400,
+        duration: 0.6,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#secondCard",
+          start: "top 120%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
+      gsap.from("#thirdCard", {
+        y: 400,
+        duration: 0.6,
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: "#thirdCard",
+          start: "top 120%",
+          end: "bottom 50%",
+          ease: "Power2.easeInOut",
+          autoAlpha: 1,
+        },
+      })
     }
   })
   return (

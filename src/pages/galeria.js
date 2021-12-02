@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 import GlobalStyles from "../styles/Global"
 import Layout from "../components/Layout"
@@ -6,6 +6,8 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { Link, graphql } from "gatsby"
 import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox"
 import { Helmet } from "react-helmet"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const StyledGallery = styled.div`
   min-height: calc(100vh - 136px);
@@ -81,13 +83,32 @@ const SingleImage = styled.div`
 `
 
 export default function Galeria({ data }) {
+  useEffect(() => {
+    gsap.from("#singleGallery div", {
+      opacity: 0,
+      stagger: 0.05,
+      y: 100,
+      duration: 0.6,
+      delay: 0.5,
+      autoAlpha: 0,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: "#singleGallery",
+        start: "top 40%",
+        end: "bottom 50%",
+        ease: "Power2.easeInOut",
+        autoAlpha: 1,
+      },
+    })
+  })
+
   return (
     <Layout>
       <StyledGallery>
         <Helmet title="Galeria" defer={false} />
         <SimpleReactLightbox>
           <SRLWrapper>
-            <Wrapper>
+            <Wrapper id="singleGallery">
               {data.gallery.edges.map(({ node }) => (
                 <SingleImage key={node.id}>
                   <a href={node.publicURL}>

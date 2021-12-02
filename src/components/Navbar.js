@@ -139,6 +139,7 @@ const DirectContact = styled.div`
   max-width: 360px;
   margin: 0 auto;
   display: none;
+  visibility: hidden;
   ul {
     margin-top: 1rem;
     padding: 4rem 0 0 0 !important;
@@ -178,6 +179,7 @@ const DirectContact = styled.div`
   @media (max-width: 767px) {
     display: flex;
     margin-bottom: 3rem;
+    visibility: visible;
   }
   @media (max-width: 575px) {
     max-width: 100%;
@@ -269,6 +271,21 @@ export default function Navbar() {
         autoAlpha: 0,
         opacity: 0,
         delay: 0.5,
+      })
+    } else {
+      gsap.from("#navLogo", {
+        x: 100,
+        duration: 0.5,
+        autoAlpha: 0,
+        opacity: 0,
+        delay: 0.4,
+      })
+      gsap.from(".burger", {
+        x: -100,
+        duration: 0.5,
+        autoAlpha: 0,
+        opacity: 0,
+        delay: 0.4,
       })
     }
   })

@@ -114,85 +114,33 @@ const StyledAmenities = styled.div`
 
 export default function Amenities() {
   useEffect(() => {
-    if (window.innerWidth > 767) {
-      gsap.from("#amenitiesTitle", {
-        y: -200,
-        duration: 0.8,
-        autoAlpha: 0,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: "#amenitiesTitle",
-          start: "top 40%",
-          end: "bottom 50%",
-          ease: "Power2.easeInOut",
-          autoAlpha: 1,
-        },
-      })
-      gsap.from("#amenities li", {
-        opacity: 0,
-        stagger: 0.2,
-        y: 300,
-        duration: 1,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: "#amenities",
-          start: "top 40%",
-          end: "bottom 50%",
-          ease: "Power2.easeInOut",
-          autoAlpha: 1,
-        },
-      })
-    }
-    /* else {
-      gsap.from("#partnershipTitle", {
-        y: -200,
-        duration: 0.8,
-        autoAlpha: 0,
-        scrollTrigger: {
-          trigger: "#partnershipTitle",
-          start: "top 40%",
-          end: "bottom 50%",
-          ease: "Power2.easeInOut",
-          autoAlpha: 1,
-        },
-      });
-      gsap.from("#firstCard", {
-        y: 350,
-        duration: 0.7,
-        autoAlpha: 0,
-        scrollTrigger: {
-          trigger: "#firstCard",
-          start: "top 90%",
-          end: "bottom 50%",
-          ease: "Power2.easeInOut",
-          autoAlpha: 1,
-        },
-      });
-      gsap.from("#secondCard", {
-        y: 350,
-        duration: 0.7,
-        autoAlpha: 0,
-        scrollTrigger: {
-          trigger: "#secondCard",
-          start: "top 90%",
-          end: "bottom 50%",
-          ease: "Power2.easeInOut",
-          autoAlpha: 1,
-        },
-      });
-      gsap.from("#thirdCard", {
-        y: 350,
-        duration: 0.7,
-        autoAlpha: 0,
-        scrollTrigger: {
-          trigger: "#thirdCard",
-          start: "top 90%",
-          end: "bottom 50%",
-          ease: "Power2.easeInOut",
-          autoAlpha: 1,
-        },
-      });
-    } */
+    gsap.from("#amenitiesTitle", {
+      y: -200,
+      duration: 0.8,
+      autoAlpha: 0,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: "#amenitiesTitle",
+        start: "top 40%",
+        end: "bottom 50%",
+        ease: "Power2.easeInOut",
+        autoAlpha: 1,
+      },
+    })
+    gsap.from("#amenities li", {
+      opacity: 0,
+      stagger: 0.2,
+      y: 300,
+      duration: 1,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: "#amenities",
+        start: "top 40%",
+        end: "bottom 50%",
+        ease: "Power2.easeInOut",
+        autoAlpha: 1,
+      },
+    })
   })
   return (
     <StyledAmenities>

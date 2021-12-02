@@ -152,21 +152,19 @@ const StyledContent = styled.div`
 
 export default function Author() {
   useEffect(() => {
-    if (window.innerWidth > 767) {
-      gsap.from("#authorContent", {
-        y: 250,
-        duration: 0.8,
-        autoAlpha: 0,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: "#authorContent",
-          start: "top 90%",
-          end: "bottom 50%",
-          ease: "Power2.easeInOut",
-          autoAlpha: 1,
-        },
-      })
-    }
+    gsap.from("#authorContent", {
+      y: 250,
+      duration: 0.8,
+      autoAlpha: 0,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: "#authorContent",
+        start: "top 90%",
+        end: "bottom 50%",
+        ease: "Power2.easeInOut",
+        autoAlpha: 1,
+      },
+    })
   })
   return (
     <StyledAuthor>

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 import GlobalStyles from "../styles/Global"
 import Layout from "../components/Layout"
@@ -6,6 +6,8 @@ import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import { Data } from "../components/Data"
 import { Helmet } from "react-helmet"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const StyledFaq = styled.div`
   min-height: calc(100vh - 136px);
@@ -84,6 +86,11 @@ const Dropdown = styled.div`
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
+  @media (min-width: 767px) {
+    div {
+      visibility: hidden;
+    }
+  }
 `
 
 export default function Faq() {
@@ -97,13 +104,45 @@ export default function Faq() {
     setClicked(index)
   }
 
+  useEffect(() => {
+    gsap.from("#faqTitle", {
+      y: -200,
+      duration: 0.6,
+      autoAlpha: 0,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: "#faqTitle",
+        start: "top 40%",
+        end: "bottom 50%",
+        ease: "Power2.easeInOut",
+        autoAlpha: 1,
+      },
+    })
+    gsap.from("#faqContainer div", {
+      opacity: 0,
+      stagger: 0.05,
+      y: 100,
+      duration: 0.6,
+      delay: 0.5,
+      autoAlpha: 0,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: "#faqContainer",
+        start: "top 40%",
+        end: "bottom 50%",
+        ease: "Power2.easeInOut",
+        autoAlpha: 1,
+      },
+    })
+  })
+
   return (
     <Layout>
       <StyledFaq>
         <Helmet title="FAQ" defer={false} />
         <div>
-          <h2>FAQ</h2>
-          <Container>
+          <h2 id="faqTitle">FAQ</h2>
+          <Container id="faqContainer">
             {Data.map((item, index) => {
               return (
                 <>

@@ -149,6 +149,14 @@ export default function Hero() {
         opacity: 0,
         delay: 0.5,
       })
+    } else {
+      gsap.from("#textWrapper", {
+        x: -250,
+        duration: 0.5,
+        autoAlpha: 0,
+        opacity: 0,
+        delay: 0.4,
+      })
     }
   })
   return (
