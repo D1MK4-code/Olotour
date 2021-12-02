@@ -69,6 +69,9 @@ const StyledNavbar = styled.nav`
       }
     }
   }
+  #navLogo {
+    visibility: hidden;
+  }
   @media (min-width: 768px) {
     #navLogo,
     .nav-links {
@@ -199,6 +202,8 @@ const StyledBurger = styled.div`
   position: relative;
   z-index: 10;
   pointer-events: all;
+  visibility: hidden;
+
   div {
     width: 2rem;
     height: 3px;

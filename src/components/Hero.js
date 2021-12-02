@@ -124,9 +124,7 @@ const StyledLeft = styled.div`
   z-index: 5;
   width: 40%;
   margin: 0 auto 0 0 !important;
-  @media (min-width: 768px) {
-    visibility: hidden;
-  }
+  visibility: hidden;
   @media (max-width: 1199px) {
     width: 50%;
   }

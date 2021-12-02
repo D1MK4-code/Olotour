@@ -125,6 +125,8 @@ const StyledContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  visibility: hidden;
+
   .gatsby-image-wrapper {
     position: relative !important;
     width: 100px !important;
@@ -144,9 +146,6 @@ const StyledContent = styled.div`
       position: absolute !important;
       border-radius: 50%;
     }
-  }
-  @media (min-width: 768px) {
-    visibility: hidden;
   }
 `
 

@@ -281,7 +281,6 @@ export default function Contact() {
           end: "bottom 50%",
           ease: "Power2.easeInOut",
           autoAlpha: 1,
-          markers: true,
         },
       })
       gsap.from("#leftContactImage", {

@@ -86,11 +86,7 @@ const Dropdown = styled.div`
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  @media (min-width: 767px) {
-    div {
-      visibility: hidden;
-    }
-  }
+  visibility: hidden;
 `
 
 export default function Faq() {
