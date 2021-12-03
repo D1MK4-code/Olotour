@@ -83,7 +83,7 @@ const SingleImage = styled.div`
 `
 
 export default function Galeria({ data }) {
-  useEffect(() => {
+  /* useEffect(() => {
     if (window.innerWidth > 767) {
       gsap.from("#singleGallery div", {
         opacity: 0,
@@ -112,7 +112,7 @@ export default function Galeria({ data }) {
         ease: "power4.out",
       })
     }
-  })
+  }) */
 
   return (
     <Layout>

@@ -99,7 +99,7 @@ export default function Faq() {
     setClicked(index)
   }
 
-  useEffect(() => {
+  /*   useEffect(() => {
     if (window.innerWidth > 767) {
       gsap.from("#faqTitle", {
         y: -200,
@@ -147,7 +147,7 @@ export default function Faq() {
         ease: "power4.out",
       })
     }
-  })
+  }) */
 
   return (
     <Layout>
